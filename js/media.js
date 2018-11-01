@@ -14,3 +14,12 @@ function font() {
 
     document.querySelector('html').style.fontSize = fz + "px";
 }
+
+function gotop() {
+    // $("#top").click(function() {
+    //     $("html,body").animate({ scrollTop: 0 }, 500);
+    // });
+    $("#top").tap(function() {
+        $("html,body").scrollTop(0);
+    });
+}
