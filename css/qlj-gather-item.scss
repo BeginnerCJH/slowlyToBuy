@@ -1,0 +1,54 @@
+.qlj-items {
+    background-color: rgb(238, 238, 238);
+    display: flex;
+    flex-wrap: wrap;
+    a {
+        background-color: #fff;
+        width: 50%;
+        border: .08rem solid rgb(228, 228, 228);
+        padding: 0 .08rem;
+        p {
+            font-size: 0.12rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            padding-bottom: .08rem;
+        }
+        div {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 0.08rem;
+            font-size: 0.14rem;
+            .red {
+                color: red;
+                font-size: 0.25rem;
+            }
+            span:last-child {
+                background-color: rgb(255, 153, 0);
+                color: #fff;
+                border-radius: 3px;
+                padding: .03rem .1rem;
+            }
+        }
+    }
+}
+
+// 筛选
+.navbar {
+    height: 0.6rem;
+    line-height: 0.6rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.22rem;
+    section {
+        outline: none;
+        border: none;
+    }
+    a {
+        width: 10%;
+        border-left: 1px solid #ccc;
+        height: 100%;
+        background: url(../images/icon_bar.png) no-repeat -.1rem -.15rem;
+        background-size: 4.2rem;
+    }
+}
