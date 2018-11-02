@@ -1,8 +1,12 @@
 .index-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .index-menu a {
   width: 25%;
 }
+/*# sourceMappingURL=index.css.map */
