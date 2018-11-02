@@ -55,6 +55,7 @@
     {{/each}}
   </script>
   <script>
+    /* 1 */
     // 获取地址栏参数中的id
     var id=URLHandle.parameter(location.search).id;
     // console.log(id);
@@ -76,7 +77,12 @@
       }
     });
     
-
+    /* 2点击发现 */
+    $("cjh-coupon-list").on("click",".coupon-img>img",function () {
+      console.log('aaa');
+      
+      
+    });
   
   </script>
 </body>

@@ -6,7 +6,7 @@
 
 /*优惠券列表  */
 .cjh-coupon-list {
-  padding: .1rem .1rem .2rem .1rem;
+  padding: 1.1rem .1rem .2rem .1rem;
   border-bottom: 1px solid #efefef;
 }
 
@@ -55,10 +55,12 @@
   height: .14rem;
   border-top: 1px solid #737373;
   border-left: 1px solid #737373;
-  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
 }
 
 .cjh-coupon-list .list-main .coupon-content .cou-con-left .data {
   padding-top: .2rem;
   color: #f08525;
 }
+/*# sourceMappingURL=cjh-coupon-list.css.map */

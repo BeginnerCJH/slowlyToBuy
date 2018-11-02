@@ -52,6 +52,8 @@ img {
     background: #ff841d;
     padding: .1rem .06rem .1rem  .14rem;
     border-bottom: 2px solid #cccccc;
+    position: fixed;
+    width: 100%;
     .logo{
         width: 3.71rem;
         height: .5rem;
@@ -166,6 +168,9 @@ footer{
      border-bottom: 2px solid #cccccc;
      display: flex;
      justify-content: space-between;
+     position: fixed;
+     width: 100%;
+    
   .hd-back{
       display: flex;
       flex-direction: column;
