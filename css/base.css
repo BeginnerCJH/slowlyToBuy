@@ -48,12 +48,11 @@ img {
   clear: both;
   visibility: hidden;
 }
-<<<<<<< HEAD
 
 /* logo公共头部样式 */
 .logo-header {
   background: #ff841d;
-  padding: .1rem .06rem .1rem  .14rem;
+  padding: .1rem .06rem .1rem .14rem;
   border-bottom: 2px solid #cccccc;
 }
 
@@ -141,7 +140,7 @@ footer .footer-tools > a:last-child::before {
   width: 0;
   height: 0;
   border: .08rem solid #747474;
-  border-color: transparent transparent #747474  transparent;
+  border-color: transparent transparent #747474 transparent;
   position: absolute;
   top: .04rem;
   left: .45rem;
@@ -180,7 +179,7 @@ footer .footer-copyright p:last-child {
 /* 内容头部 */
 .content-header {
   background: #ff841d;
-  padding: .1rem .06rem .1rem  .14rem;
+  padding: .1rem .06rem .1rem .14rem;
   border-bottom: 2px solid #cccccc;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -228,6 +227,4 @@ footer .footer-copyright p:last-child {
   background: url("../images/header_app.png");
   background-size: .68rem .68rem;
 }
-=======
->>>>>>> 1728bf5d25b5d6cd7ade0220e2829575dbb5a42a
 /*# sourceMappingURL=base.css.map */
