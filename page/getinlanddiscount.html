@@ -48,12 +48,12 @@
 </body>
 
 </html>
-<script src="../lib/zepto/zepto.js"></script>
+<script src="../js/jquery-3.3.1.min.js"></script>
 <script src="../lib/template/template.js"></script>
 <script src="../js/media.js"></script>
 <script type="script/template" id="lzs-getinlanddisconunt">
     {{each result as val key }}
-    <a class="lzs-one" href="http://193.112.55.79:9090/api/getdiscountproduct?productid={{val.productId}}">
+    <a class="lzs-one" href="./productid.html?productid={{val.productId}}">
         {{val.productImg}}
         <h4>{{val.productName}}</h4>
         <div>{{val.productPrice}}</div>
@@ -63,6 +63,7 @@
 </script>
 <script>
     // var box = document.querySelector("");
+
     $.ajax({
         type: 'get',
         url: "http://193.112.55.79:9090/api/getinlanddiscount",

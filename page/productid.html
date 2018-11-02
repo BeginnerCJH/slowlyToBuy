@@ -17,8 +17,20 @@
 </head>
 
 <body>
+
+    <div class="content-header">
+        <div class="hd-back"></div>
+        <div class="hd-title">
+            国内折扣
+        </div>
+        <div class="hd-download"></div>
+    </div>
+
+
+
+    <!-- 内容 -->
     <div class="lzs-big-box">
-        <div class="lzs-box">
+        <!-- <div class="lzs-box">
             <h3>西域美女新疆特产五星和田红枣<strong>250g*2</strong></h3>
             <div class="lzs-price">19.8远</div>
             <span class="lzs-mall">京东商城</span>
@@ -37,72 +49,102 @@
             <div class="lzs-code">
                 <img src="../images/mmbweixin2.png" alt="">
 
+            </div> -->
+        <div class="lzs-discuss">
+            productComment : "
+            <div class="tit">↵ 发表评论</div>↵
+            <div class="reply">↵
+                <div class="form">↵
+                    <textarea name="ctl00$ContentBody$txt_nr" id="ctl00_ContentBody_txt_nr" rows="3">
+
+                        </textarea>↵
+                    <input name="ctl00$ContentBody$lbl_fbr" id="ctl00_ContentBody_lbl_fbr" value="手机端网友58***74" type="hidden">↵
+                    <input name="ctl00$ContentBody$hid_name" id="ctl00_ContentBody_hid_name" value="西域美农新疆特产五星和田红枣250g*2" type="hidden">↵
+                    <div class="ctrl">↵
+                        <input name="ctl00$ContentBody$Button1" value="发表评论" id="ctl00_ContentBody_Button1" class="tjdp" type="submit">↵
+                    </div>↵
+                </div>↵
+            </div>↵
+            <div class="tit" id="newcomment">↵ 最新评论</div>↵
+            <div class="list">↵
+                <ul>↵ ↵ </ul>↵
             </div>
-            <div class="lzs-discuss"></div>
         </div>
+    </div>
     </div>
 
 
 
-
+    <footer>
+        <!-- 底部工具栏 -->
+        <div class="footer-tools">
+            <a href="javascript:;">登录</a>
+            <a href="javascript:;">注册</a>
+            <a href="javascript:;">返回顶部</a>
+        </div>
+        <!-- 版权信息 -->
+        <div class="footer-copyright">
+            <p>
+                <a href="javascript:;">手机APP下载</a> 慢慢买手机版
+                <span>-- 掌上比价平台</span>
+            </p>
+            <p>m.manmanbuy.com</p>
+        </div>
+    </footer>
 
 </body>
 
 </html>
-<script src="../lib/zepto/zepto.js"></script>
+<script src="../js/jquery-3.3.1.min.js"></script>
 <script src="../lib/template/template.js"></script>
-<script src="../js/media.js"></script>
-<script type="script/template" id="lzs-list-productid">
-    <div class="lzs-box">
+<script src="../js/media.js "></script>
+<script src="../js/utils.js"></script>
+<script type="script/template " id="lzs-list-productid">
+    <div class="lzs-box ">
         <h3>{{productName}}</h3>
-        <div class="lzs-price">{{productPrice}}</div>
-        <span class="lzs-mall">{{peoductFrom}}</span>
-        <span class="lzs-time">{{productTime}}</span>
-        <span class="lzs-site ">{productTips}}</span>
+        <div class="lzs-price ">{{productPrice}}</div>
+        <span class="lzs-mall ">{{peoductFrom}}</span>
+        <span class="lzs-time ">{{productTime}}</span>
+        <span class="lzs-site ">{{productTips}}</span>
         <p>{{productInfo}}</p>
         {{productImg}}
 
-        <a href="#">前往购买</a>
+        <a href="# ">前往购买</a>
         <ul>
-            <li class="clearfix">
-                <span class="left fl">北京</span>
-                <span class="right fr">有货</span>
+            <li class="clearfix ">
+                <span class="left fl ">北京</span>
+                <span class="right fr ">有货</span>
             </li>
         </ul>
         <div class="lzs-code">
-            <div class="lzs-left">
-                <div class="lzs-top">
-                    有货有货有货有货有货有货有货 有货有货有货有货有货有货有货有货有货有 货有货有货有货有货有货有货
-                </div>
-                <div class="lzs-bottom"> 有货有货有货有货有货</div>
-            </div>
-            <div class="lzs-right"><img src="../images/gengduo.png" alt=""></div>
+            <img src="../images/mmbweixin2.png" alt="">
 
         </div>
-        <div class="lzs-discuss">{{productComment}}</div>
+        <div class="lzs-discuss ">{{productComment}}</div>
     </div>
-    {{}}
+
 </script>
 <script>
-    var titleId =
-        $.ajax({
-            type: 'get',
-            url: "http://193.112.55.79:9090/api/getcategory",
-            data: {
-                'titleId': titleId
-            },
-            dataType: "jsonp",
-            success: function(res) {
-                console.log(res);
+    var productId = URLHandle.parameter(location.search).productid;
+    console.log(productId)
+    $.ajax({
+        type: 'get',
+        url: "http://193.112.55.79:9090/api/getdiscountproduct",
+        data: {
+            productid: productId
+        },
+        dataType: "jsonp",
+        success: function(res) {
+            console.log(res);
 
-                template.config("escape", false);
-                var htmlStr = template('lzs-list-productid', res.result[0]);
+            template.config("escape", false);
+            var htmlStr = template('lzs-list-productid', res.result[0]);
 
-                // console.log(htmlStr);
-                // 把数据渲染到浏览器中
-                $('tbody').html(htmlStr);
+            // console.log(htmlStr);
+            // 把数据渲染到浏览器中
+            $('.lzs-big-box').html(htmlStr);
 
-            }
+        }
 
-        })
+    })
 </script>

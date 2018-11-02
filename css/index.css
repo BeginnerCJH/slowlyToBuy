@@ -7,12 +7,16 @@
       flex-wrap: wrap;
   height: 3rem;
   overflow: hidden;
+<<<<<<< HEAD
+=======
+>>>>>>> a5f6bfef4a1b6ac4891ea72f35629158df239823
+>>>>>>> c589cd4a2de3879c563793568eaddc80264fee56
 }
 
 .index-menu a {
   padding: .08rem 0;
   text-align: center;
-  font-size: 0.12rem;
+  font-size: 0.21rem;
   width: 25%;
 }
 
@@ -20,6 +24,10 @@
   padding: .08rem 0;
   margin: 0 auto;
   width: 50%;
+}
+
+.index-menu a:nth-last-child(-n+4) {
+  display: none;
 }
 
 .hr {
@@ -31,7 +39,7 @@
 .discount .discount_title {
   color: #fff;
   width: 100%;
-  font-size: 0.17rem;
+  font-size: 0.22rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -44,21 +52,34 @@
 }
 
 .discount .discount_content a {
-  font-size: 0.14rem;
-  padding-top: .16rem;
-  padding-left: 120px;
-  padding-right: 0.08rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   border-bottom: 1px solid #ccc;
+  font-size: 0.23rem;
+  padding: .1rem .1rem;
 }
 
-.discount .discount_content a div:last-child {
-  font-size: 0.12rem;
-  color: #999999;
+.discount .discount_content a .left {
+  padding: .15rem 0;
+  width: 35%;
 }
 
-.discount .discount_content a div:last-child {
+.discount .discount_content a .right {
+  margin-left: 0.18rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   padding-top: 0.38rem;
-  padding-bottom: 0.3rem;
+}
+
+.discount .discount_content a .right p:first-child {
+  height: 70%;
+}
+
+.discount .discount_content a .right p:last-child {
+  height: 30%;
+  color: #b6b5b5;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -73,7 +94,7 @@
 
 .more {
   padding: 0.1rem .1rem 0;
-  font-size: 0.12rem;
+  font-size: 0.22rem;
 }
 
 .more a {
@@ -87,7 +108,7 @@
 .rand .rand_title {
   color: #fff;
   width: 100%;
-  font-size: 0.17rem;
+  font-size: 0.22rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

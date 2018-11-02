@@ -72,22 +72,37 @@
   padding: .2rem;
 }
 
-.lzs-box .lzs-code .lzs-left {
-  width: 70%;
+.lzs-box .lzs-discuss .tit {
+  font-size: .15rem;
+  padding: .1rem .1rem;
 }
 
-.lzs-box .lzs-code .lzs-left .lzs-top {
-  color: red;
-  font-size: .2rem;
+.lzs-box .lzs-discuss .reply {
+  border: 1px solid #ccc;
   padding-bottom: .4rem;
+  margin-top: .1rem;
 }
 
-.lzs-box .lzs-code .lzs-left .lzs-bottom {
-  border-radius: .2rem;
-  background-color: red;
+.lzs-box .lzs-discuss .reply textarea {
+  width: 100%;
+}
+
+.lzs-box .lzs-discuss .reply .ctrl input {
+  background-color: #fff;
+  display: block;
+  background-color: orange;
   color: #fff;
-  margin: 0 .1rem;
-  padding: .05rem 0;
-  text-align: center;
+  padding: .1rem;
+  float: right;
+  margin-right: .2rem;
+}
+
+.lzs-box .lzs-discuss .tit {
+  font-size: .15rem;
+  padding: .1rem .1rem;
+}
+
+.lzs-box .lzs-discuss .list {
+  width: 100%;
 }
 /*# sourceMappingURL=productid.css.map */

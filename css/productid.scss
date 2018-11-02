@@ -57,22 +57,42 @@
         border: 1px solid red;
         margin: .1rem;
         padding: .2rem;
-        .lzs-left {
-            width: 70%;
-            .lzs-top {
-                color: red;
-                font-size: .2rem;
-                padding-bottom: .4rem;
+    }
+    .lzs-discuss {
+        .tit {
+            font-size: .15rem;
+            padding: .1rem .1rem;
+        }
+        .reply {
+            border: 1px solid #ccc;
+            padding-bottom: .4rem;
+            // border-top: none;
+            margin-top: .1rem;
+            textarea {
+                width: 100%;
             }
-            .lzs-bottom {
-                border-radius: .2rem;
-                background-color: red;
-                color: #fff;
-                margin: 0 .1rem;
-                padding: .05rem 0;
-                text-align: center;
+            .ctrl {
+                // width: 100%;
+                // float: right;
+                input {
+                    // width: 100%;
+                    // line-height: 0;
+                    background-color: #fff;
+                    display: block;
+                    background-color: orange;
+                    color: #fff;
+                    padding: .1rem;
+                    float: right;
+                    margin-right: .2rem;
+                }
             }
         }
-        .lzs-right {}
+        .tit {
+            font-size: .15rem;
+            padding: .1rem .1rem;
+        }
+        .list {
+            width: 100%;
+        }
     }
 }
