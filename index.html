@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/index.css">
     <script src="./lib/zepto/zepto.min.js"></script>
@@ -13,45 +14,117 @@
 </head>
 
 <body>
+
+
+    <!-- 菜单 -->
     <div class="index-menu">
         <a href="javascript:;">
             <img src="./images/ic_search.png" alt=""> 比价搜索
         </a>
         <a href="javascript:;">
-            <img src="./images/ic_search.png" alt=""> 比价搜索
+            <img src="./images/ic_coudanpin.png" alt=""> 比价搜索
         </a>
         <a href="javascript:;">
-            <img src="./images/ic_search.png" alt=""> 比价搜索
+            <img src="./images/ic_coudanpin.png" alt=""> 比价搜索
         </a>
         <a href="javascript:;">
-            <img src="./images/ic_search.png" alt=""> 比价搜索
+            <img src="./images/ic_bcj.png" alt=""> 比价搜索
         </a>
         <a href="javascript:;">
-            <img src="./images/ic_search.png" alt=""> 比价搜索
+            <img src="./images/haitao.png" alt=""> 比价搜索
         </a>
         <a href="javascript:;">
-            <img src="./images/ic_search.png" alt=""> 比价搜索
+            <img src="./images/ic_temai.png" alt=""> 比价搜索
         </a>
         <a href="javascript:;">
-            <img src="./images/ic_search.png" alt=""> 比价搜索
+            <img src="./images/ic_trend.png" alt=""> 比价搜索
         </a>
         <a href="javascript:;">
-            <img src="./images/ic_search.png" alt=""> 比价搜索
+            <img src="./images/gengduo.png" alt="" class="loadmore"> 比价搜索
+        </a>
+        <!-- <div class="slideDown"> -->
+        <a href="javascript:;">
+            <img src="./images/ic_coudanpin.png" alt=""> 比价搜索
         </a>
         <a href="javascript:;">
-            <img src="./images/ic_search.png" alt=""> 比价搜索
+            <img src="./images/ic_kb.png" alt=""> 比价搜索
         </a>
         <a href="javascript:;">
-            <img src="./images/ic_search.png" alt=""> 比价搜索
+            <img src="./images/ic_mall.png" alt=""> 比价搜索
         </a>
         <a href="javascript:;">
-            <img src="./images/ic_search.png" alt=""> 比价搜索
+            <img src="./images/ic_pp.png" alt=""> 比价搜索
         </a>
-        <a href="javascript:;">
-            <img src="./images/ic_search.png" alt=""> 比价搜索
-        </a>
+        <!-- </div> -->
+    </div>
 
+
+    <!-- 分割行 -->
+    <div class="hr"></div>
+
+
+    <!-- 折扣 -->
+    <div class="discount">
+        <div class="discount_title">
+            <span>超值折扣推荐</span>
+            <a href="javascript:;"></a>
+        </div>
+        <div class="discount_content">
+            <a href="javascript:;">
+                <img src="" alt="">
+                <div>
+                    <span>移动端凑单品 : 海天 鲜味 牛抽</span><br>
+                    <span>1.28L<span class="orange">10.9元</span></span>
+                </div>
+                <div>
+                    <span>京东商城 | 10-25 14:10</span>
+                    <span><img src="" alt="">1</span>
+                </div>
+            </a>
+            <a href="javascript:;">
+                <img src="" alt="">
+                <div>
+                    <span>双11预售:日本进口尤妮佳/Moony</span>
+                    <span>婴儿纸尿裤M64*3包<span class="orange">25元定金+185元尾款</span></span>
+                </div>
+                <div>
+                    <span>天猫商城 | 10-25 13:57</span>
+                    <span><img src="" alt="">1</span>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+
+
+    <!-- 更多 -->
+    <div class="more">
+        <a href="javascript:;">更多优惠信息>></a>
+    </div>
+
+
+    <!-- 分割线 -->
+    <div class="hr"></div>
+
+
+    <!-- 品牌排行 -->
+    <div class="rand">
+        <div class="rand_title">
+            <span>品牌排行</span>
+            <a href="javascript:;">></a>
+        </div>
     </div>
 </body>
 
 </html>
+
+<script src="./lib/zepto/zepto.min.js"></script>
+<script>
+    $('.loadmore').tap(function() {
+
+        $('.index-menu>a:nth-last-child(-n+4)').css({
+            "height": "2px"
+        });
+    })
+</script>

@@ -1,7 +1,8 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 a {
@@ -45,3 +46,4 @@ img {
   clear: both;
   visibility: hidden;
 }
+/*# sourceMappingURL=base.css.map */
