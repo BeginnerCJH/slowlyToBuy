@@ -1,0 +1,93 @@
+.lzs-box {
+  padding: .2rem .1rem .1rem;
+}
+
+.lzs-box h3 {
+  font-size: .2rem;
+  font-weight: 400;
+  letter-spacing: .05rem;
+}
+
+.lzs-box .lzs-price {
+  color: red;
+  font-size: .16rem;
+  padding: .1rem 0;
+}
+
+.lzs-box .lzs-mall {
+  color: #ccc;
+  font-size: .13rem;
+}
+
+.lzs-box .lzs-time {
+  color: #ccc;
+  font-size: .13rem;
+}
+
+.lzs-box .lzs-site {
+  color: #ccc;
+  font-size: .13rem;
+}
+
+.lzs-box p {
+  padding: .2rem 0 .1rem;
+  font-size: .15rem;
+  letter-spacing: .03rem;
+}
+
+.lzs-box a {
+  background-color: orange;
+  color: white;
+  font-size: .15rem;
+  border-radius: .05rem;
+  padding: .05rem 0;
+  text-align: center;
+  margin: .3rem .55rem;
+}
+
+.lzs-box ul {
+  margin: 0 auto;
+  width: 2rem;
+}
+
+.lzs-box ul li {
+  border-bottom: 1px dashed #ccc;
+  padding: 0 .2rem;
+}
+
+.lzs-box ul li .left {
+  color: #000;
+}
+
+.lzs-box ul li .right {
+  color: red;
+}
+
+.lzs-box .lzs-code {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 1px solid red;
+  margin: .1rem;
+  padding: .2rem;
+}
+
+.lzs-box .lzs-code .lzs-left {
+  width: 70%;
+}
+
+.lzs-box .lzs-code .lzs-left .lzs-top {
+  color: red;
+  font-size: .2rem;
+  padding-bottom: .4rem;
+}
+
+.lzs-box .lzs-code .lzs-left .lzs-bottom {
+  border-radius: .2rem;
+  background-color: red;
+  color: #fff;
+  margin: 0 .1rem;
+  padding: .05rem 0;
+  text-align: center;
+}
+/*# sourceMappingURL=productid.css.map */

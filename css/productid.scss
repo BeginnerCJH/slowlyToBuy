@@ -1,0 +1,78 @@
+.lzs-box {
+    padding: .2rem .1rem .1rem;
+    // text-align: center;
+    h3 {
+        font-size: .2rem;
+        font-weight: 400;
+        letter-spacing: .05rem;
+    }
+    .lzs-price {
+        color: red;
+        font-size: .16rem;
+        padding: .1rem 0;
+    }
+    .lzs-mall {
+        color: #ccc;
+        font-size: .13rem;
+    }
+    .lzs-time {
+        color: #ccc;
+        font-size: .13rem;
+    }
+    .lzs-site {
+        color: #ccc;
+        font-size: .13rem;
+    }
+    p {
+        padding: .2rem 0 .1rem;
+        font-size: .15rem;
+        letter-spacing: .03rem;
+    }
+    a {
+        background-color: orange;
+        color: white;
+        font-size: .15rem;
+        border-radius: .05rem;
+        padding: .05rem 0;
+        text-align: center;
+        // width: 80%;
+        margin: .3rem .55rem;
+    }
+    ul {
+        margin: 0 auto;
+        width: 2rem;
+        li {
+            border-bottom: 1px dashed #ccc;
+            padding: 0 .2rem;
+            .left {
+                color: #000;
+            }
+            .right {
+                color: red;
+            }
+        }
+    }
+    .lzs-code {
+        display: flex;
+        border: 1px solid red;
+        margin: .1rem;
+        padding: .2rem;
+        .lzs-left {
+            width: 70%;
+            .lzs-top {
+                color: red;
+                font-size: .2rem;
+                padding-bottom: .4rem;
+            }
+            .lzs-bottom {
+                border-radius: .2rem;
+                background-color: red;
+                color: #fff;
+                margin: 0 .1rem;
+                padding: .05rem 0;
+                text-align: center;
+            }
+        }
+        .lzs-right {}
+    }
+}

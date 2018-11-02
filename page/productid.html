@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <!-- 自己默认把ie浏览器跳到最新版本 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 理想视口的设置 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/productid.css">
+    <!-- <link rel="stylesheet" href="../css/"> -->
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+
+
+    <title>productid</title>
+</head>
+
+<body>
+    <div class="lzs-big-box">
+        <div class="lzs-box">
+            <h3>西域美女新疆特产五星和田红枣<strong>250g*2</strong></h3>
+            <div class="lzs-price">19.8远</div>
+            <span class="lzs-mall">京东商城</span>
+            <span class="lzs-time">10-22 13:28</span>
+            <span class="lzs-site ">chenjin/慢慢买</span>
+            <p>原件25.9一斤，凑满5件只要99远价格。</p>
+            <img src="../images/gengduo.png" alt="">
+
+            <a href="#">前往购买</a>
+            <ul>
+                <li class="clearfix">
+                    <span class="left fl">北京</span>
+                    <span class="right fr">有货</span>
+                </li>
+            </ul>
+            <div class="lzs-code">
+                <img src="../images/mmbweixin2.png" alt="">
+
+            </div>
+            <div class="lzs-discuss"></div>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+
+</html>
+<script src="../lib/zepto/zepto.js"></script>
+<script src="../lib/template/template.js"></script>
+<script src="../js/media.js"></script>
+<script type="script/template" id="lzs-list-productid">
+    <div class="lzs-box">
+        <h3>{{productName}}</h3>
+        <div class="lzs-price">{{productPrice}}</div>
+        <span class="lzs-mall">{{peoductFrom}}</span>
+        <span class="lzs-time">{{productTime}}</span>
+        <span class="lzs-site ">{productTips}}</span>
+        <p>{{productInfo}}</p>
+        {{productImg}}
+
+        <a href="#">前往购买</a>
+        <ul>
+            <li class="clearfix">
+                <span class="left fl">北京</span>
+                <span class="right fr">有货</span>
+            </li>
+        </ul>
+        <div class="lzs-code">
+            <div class="lzs-left">
+                <div class="lzs-top">
+                    有货有货有货有货有货有货有货 有货有货有货有货有货有货有货有货有货有 货有货有货有货有货有货有货
+                </div>
+                <div class="lzs-bottom"> 有货有货有货有货有货</div>
+            </div>
+            <div class="lzs-right"><img src="../images/gengduo.png" alt=""></div>
+
+        </div>
+        <div class="lzs-discuss">{{productComment}}</div>
+    </div>
+    {{}}
+</script>
+<script>
+    var titleId =
+        $.ajax({
+            type: 'get',
+            url: "http://193.112.55.79:9090/api/getcategory",
+            data: {
+                'titleId': titleId
+            },
+            dataType: "jsonp",
+            success: function(res) {
+                console.log(res);
+
+                template.config("escape", false);
+                var htmlStr = template('lzs-list-productid', res.result[0]);
+
+                // console.log(htmlStr);
+                // 把数据渲染到浏览器中
+                $('tbody').html(htmlStr);
+
+            }
+
+        })
+</script>
