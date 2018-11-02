@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <!-- 自己默认把ie浏览器跳到最新版本 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 理想视口的设置 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/getsitenav.css">
+    <!-- <link rel="stylesheet" href="../css/"> -->
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+
+
+    <title>getsitenav</title>
+</head>
+
+<body>
+    <div class="content-header">
+        <div class="hd-back"></div>
+        <div class="hd-title">
+            商城导航
+        </div>
+        <div class="hd-download"></div>
+    </div>
+
+    <!-- 内容 -->
+    <div class="lzs-box">
+
+        <a href="#"><img src="" alt=""> 京东商城
+        </a>
+    </div>
+
+
+    <footer>
+        <!-- 底部工具栏 -->
+        <div class="footer-tools">
+            <a href="javascript:;">登录</a>
+            <a href="javascript:;">注册</a>
+            <a href="javascript:;">返回顶部</a>
+        </div>
+        <!-- 版权信息 -->
+        <div class="footer-copyright">
+            <p>
+                <a href="javascript:;">手机APP下载</a> 慢慢买手机版
+                <span>-- 掌上比价平台</span>
+            </p>
+            <p>m.manmanbuy.com</p>
+        </div>
+    </footer>
+</body>
+
+</html>
+<script src="../lib/zepto/zepto.js"></script>
+<script src="../lib/template/template.js"></script>
+<script src="../js/media.js"></script>
+<script type="script/template" id="lzs-getsitenav">
+    {{each result as val key}}
+    <a href="{{val.navHref}}">
+        <img src="{{val.navImg}}" alt=""> {{val.navTitle}}
+    </a> {{/each}}
+
+</script>
+<script>
+    $.ajax({
+        type: 'get',
+        url: "http://193.112.55.79:9090/api/getsitenav",
+
+        dataType: "jsonp",
+        success: function(res) {
+            // console.log(res);
+            // template.config("escape", false);
+            var htmlStr = template('lzs-getsitenav', res);
+
+            // console.log(htmlStr);
+            // 把数据渲染到浏览器中
+            $(".lzs-box").html(htmlStr);
+
+        }
+
+    })
+</script>

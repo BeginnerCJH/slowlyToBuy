@@ -1,0 +1,129 @@
+/* 重置头部样式 */
+.zwz-header{
+    background-color: #f4483e;
+}
+
+/* 白菜价头部导航栏 */
+.zwz-nav{
+    overflow: hidden;
+
+    .zwz-aa{
+        width: 160%;
+
+        a{
+            background-color: #fff;
+            font-size: .24rem;
+            padding: 0 .1rem;
+            float: left;
+            text-align: center;
+            height: 0.66rem;
+            line-height: 0.66rem;
+        }
+
+        .active{
+            color: #e4393c;
+            border-bottom: 2px solid #e4393c;
+        }
+    }  
+}
+
+/* 白菜价商品 */
+.zwz-ware{
+
+    .zw-one{
+        border-top: 10px solid #f7f7f7;
+        padding: .22rem .08rem;
+        display: flex;
+
+        // 商品图片
+        .zw-img{
+            width: 2.2rem;
+            height: 2.2rem;
+        }
+
+        // 商品内容
+        .zw-content{
+
+            // 商品标题
+            .zc-title{
+                font-size: .22rem;
+            }
+
+            // 商品价格
+            .zc-price{
+                padding-top: .34rem;
+                color: #fc5a5e;
+                vertical-align: middle;
+
+                .rmb{
+                    font-size: .18rem;
+                }
+
+                .num{
+                    font-size: .32rem;
+                    padding-top: 0.02rem;
+                }
+                del{
+                    color: #a8a8a8;
+                    font-size: .18rem;
+                }
+            }
+
+            // 进度条
+            .zc-progress{
+                display: flex;
+                padding-top: 0.38rem;
+
+                .zp-ress{
+                    width: 1.36rem;
+                    background-color: #ffb7b7;
+                    border: 2px solid #fc353a;
+                    border-radius: .2rem;
+                    font-weight: 700;
+                    display: flex;
+                    align-content: center;
+                    justify-content: center;
+                   
+                    >span{
+                    color: #fff;
+                    font-size: .16rem;
+                    }
+                }
+
+                .zp-font{
+                    font-size: .20rem;
+                    padding-left: .16rem;
+                    color: #fc353a;
+                }
+            }
+
+            // 优惠券
+            .zc-coupon{
+                display: flex;
+                padding-top: 0.16rem;
+                justify-content: space-between;
+                width: 4.34rem;
+                
+                .zcp-five{
+                    height: 0.46rem;
+                    line-height: 0.46rem;
+                    font-size: .22rem;
+                    border: 2px dashed #e4393c;
+                    color: #e4393c;
+                    width: 2.08rem;
+                    text-align: center;
+                }
+
+                .zcp-btn{
+                    background-color: #ff5e5d;
+                    height: 0.5rem;
+                    line-height: 0.5rem;
+                    font-size: .22rem;
+                    color: #fff;
+                    padding: 0 .05rem;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}
