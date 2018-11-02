@@ -5,6 +5,11 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+<<<<<<< HEAD
+=======
+  height: 3rem;
+  overflow: hidden;
+>>>>>>> a5f6bfef4a1b6ac4891ea72f35629158df239823
 }
 
 .index-menu a {
