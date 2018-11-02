@@ -57,7 +57,7 @@
 <script src="../js/media.js"></script>
 <script type="script/template" id="lzs-getsitenav">
     {{each result as val key}}
-    <a href="#">
+    <a href="{{val.navHref}}">
         <img src="{{val.navImg}}" alt=""> {{val.navTitle}}
     </a> {{/each}}
 
