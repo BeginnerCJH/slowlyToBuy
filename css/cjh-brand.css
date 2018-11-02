@@ -1,0 +1,128 @@
+@charset "UTF-8";
+/* 面包屑导航 */
+.cjh-breadcrumb-nav {
+  border-top: #dbdbdb solid 1px;
+  border-bottom: #dbdbdb solid 1px;
+  padding: .2rem;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fefefe), to(#ececec));
+  background-image: linear-gradient(#fefefe, #ececec);
+  font-size: .18rem;
+  margin-bottom: .2rem;
+}
+
+.cjh-breadcrumb-nav > a {
+  display: inline;
+}
+
+/*热门品牌排行  */
+.cjh-hot-brand .hb-title {
+  padding: .2rem .25rem;
+  background: #eeeeee;
+  margin-bottom: .2rem;
+  color: #9a652e;
+  border-top: #dbdbdb solid 1px;
+  border-bottom: #dbdbdb solid 1px;
+  font-size: .16rem;
+}
+
+.cjh-hot-brand .hb-main {
+  border-top: #dbdbdb solid 1px;
+  margin-bottom: .2rem;
+}
+
+.cjh-hot-brand .hb-main .ul-hb li {
+  background: #eeeeee;
+  font-size: .14rem;
+}
+
+.cjh-hot-brand .hb-main .ul-hb li a {
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: .2rem .3rem;
+  border-bottom: #dbdbdb solid 1px;
+}
+
+.cjh-hot-brand .hb-main .ul-hb li a .li-arr {
+  display: block;
+  content: "";
+  width: .12rem;
+  height: .12rem;
+  border-top: 1px #666 solid;
+  border-right: 1px #666 solid;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+.cjh-hot-brand .hb-main .ul-hb li .brand-list {
+  display: none;
+}
+
+.cjh-hot-brand .hb-main .ul-hb li .brand-list li {
+  padding: .1rem;
+  background: #fff;
+  border-bottom: #dbdbdb solid 1px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.cjh-hot-brand .hb-main .ul-hb li .brand-list li .ranking {
+  background: #cccccc;
+  width: 1.4em;
+  height: 1.4em;
+  font-size: .12rem;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin-right: .1rem;
+}
+
+.cjh-hot-brand .hb-main .ul-hb li .brand-list li:first-child .ranking {
+  background: #f10e0e;
+}
+
+.cjh-hot-brand .hb-main .ul-hb li .brand-list li:nth-child(2) .ranking {
+  background: #ff9211;
+}
+
+.cjh-hot-brand .hb-main .ul-hb li .brand-list li:nth-child(3) .ranking {
+  background: #85de59;
+}
+
+.cjh-hot-brand .hb-main .ul-hb li .brand-list li .list-content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.cjh-hot-brand .hb-main .ul-hb li .brand-list li .list-content > p:first-child {
+  font-weight: 700;
+  font-size: .22rem;
+}
+
+.cjh-hot-brand .hb-main .ul-hb li .brand-list li .list-content > p:last-child {
+  color: #cccccc;
+  font-size: .12rem;
+}
+
+.cjh-hot-brand .hb-main .ul-hb li .brand-list li .list-arr {
+  width: .12rem;
+  height: .12rem;
+  border-top: 1px #666 solid;
+  border-right: 1px #666 solid;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  margin: auto 0;
+}
+/*# sourceMappingURL=cjh-brand.css.map */
