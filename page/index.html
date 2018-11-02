@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/zwz-index.css">
+    <title>白菜价页面</title>
+</head>
+<body>
+
+    <div class="content-header zwz-header">
+        <div class="hd-back"></div>
+        <div class="hd-title">
+            白菜价-淘宝内部券
+        </div>
+        <div class="hd-download"></div>
+    </div>
+    <!-- 白菜价头部导航栏 -->
+    <div class="zwz-nav">
+        <a class="active" href="#zwz-all">全部</a>
+        <a href="#zwz-more">热销</a>
+        <a href="#">9块邮</a>
+        <a href="#">19块邮</a>
+        <a href="#">数码家电</a>
+        <a href="#">居家</a>
+    </div>
+
+    <!-- 白菜价商品 -->
+    <div class="zwz-ware" id="zwz-all">
+        <div class="zw-one">
+            <div class="zw-img"></div>
+            <div class="zw-content">
+                <div class="zc-title">[包邮]双十一红包 今日开启</div>
+                <div class="zc-price">
+                    <span class="rmb">￥</span><span class="num">0.0</span>&nbsp;&nbsp;&nbsp;
+                    <del>￥0</del>
+                </div>
+                <div class="zc-progress">
+                    <div class="zp-ress">
+                        <span>1%</span>
+                    </div>
+                    <span class="zp-font">已领82张</span>
+                </div>
+                <div class="zc-coupon">
+                    <div class="zcp-five">点此领15元优惠券</div>
+                    <div class="zcp-btn">下单链接</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+<script src="../js/media.js"></script>
+<script src="../lib/template/template.js"></script>
+<script type="text/template" id="goodsTemp">
+    {{each result as val key}}
+        <a href="#">{{val.title}}</a>
+    {{/each}}
+</script>
+</html>
+
+<script>
+
+    $.ajax({
+        type:'get',
+        url:"http://193.112.55.79:9090/api/getbaicaijiatitle",
+        dataType:'jsonp',
+        success:function (res){
+            var htmlStr = template('goodsTemp', res);
+
+            // 动态渲染数据
+            $('#zwz-all').html(htmlStr);
+        }
+    })
+
+</script>

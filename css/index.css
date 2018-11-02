@@ -1,18 +1,12 @@
 .index-menu {
-<<<<<<< HEAD
-=======
   padding: 0.1rem 0;
->>>>>>> 1728bf5d25b5d6cd7ade0220e2829575dbb5a42a
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-<<<<<<< HEAD
-=======
   height: 3rem;
   overflow: hidden;
->>>>>>> 1728bf5d25b5d6cd7ade0220e2829575dbb5a42a
 }
 
 .index-menu a {
@@ -21,8 +15,6 @@
   font-size: 0.12rem;
   width: 25%;
 }
-<<<<<<< HEAD
-=======
 
 .index-menu a img {
   padding: .08rem 0;
@@ -106,5 +98,4 @@
   background-image: linear-gradient(#ffae00, #ff7b00);
   padding: .1rem .1rem;
 }
->>>>>>> 1728bf5d25b5d6cd7ade0220e2829575dbb5a42a
 /*# sourceMappingURL=index.css.map */

@@ -48,7 +48,6 @@ img {
   clear: both;
   visibility: hidden;
 }
-<<<<<<< HEAD
 
 /* logo公共头部样式 */
 .logo-header {
@@ -228,6 +227,4 @@ footer .footer-copyright p:last-child {
   background: url("../images/header_app.png");
   background-size: .68rem .68rem;
 }
-=======
->>>>>>> 1728bf5d25b5d6cd7ade0220e2829575dbb5a42a
 /*# sourceMappingURL=base.css.map */
