@@ -1,12 +1,110 @@
 .index-menu {
+<<<<<<< HEAD
+=======
+  padding: 0.1rem 0;
+>>>>>>> 1728bf5d25b5d6cd7ade0220e2829575dbb5a42a
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+<<<<<<< HEAD
+=======
+  height: 3rem;
+  overflow: hidden;
+>>>>>>> 1728bf5d25b5d6cd7ade0220e2829575dbb5a42a
 }
 
 .index-menu a {
+  padding: .08rem 0;
+  text-align: center;
+  font-size: 0.12rem;
   width: 25%;
 }
+<<<<<<< HEAD
+=======
+
+.index-menu a img {
+  padding: .08rem 0;
+  margin: 0 auto;
+  width: 50%;
+}
+
+.hr {
+  background-color: #e2e2e2;
+  height: 0.1rem;
+  width: 100%;
+}
+
+.discount .discount_title {
+  color: #fff;
+  width: 100%;
+  font-size: 0.17rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffae00), to(#ff7b00));
+  background-image: linear-gradient(#ffae00, #ff7b00);
+  padding: .1rem .1rem;
+}
+
+.discount .discount_content a {
+  font-size: 0.14rem;
+  padding-top: .16rem;
+  padding-left: 120px;
+  padding-right: 0.08rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.discount .discount_content a div:last-child {
+  font-size: 0.12rem;
+  color: #999999;
+}
+
+.discount .discount_content a div:last-child {
+  padding-top: 0.38rem;
+  padding-bottom: 0.3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.discount .discount_content a .orange {
+  color: #ff7300;
+}
+
+.more {
+  padding: 0.1rem .1rem 0;
+  font-size: 0.12rem;
+}
+
+.more a {
+  border: 1px solid #cccccc;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  text-align: center;
+  padding: 0.08rem 0;
+}
+
+.rand .rand_title {
+  color: #fff;
+  width: 100%;
+  font-size: 0.17rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffae00), to(#ff7b00));
+  background-image: linear-gradient(#ffae00, #ff7b00);
+  padding: .1rem .1rem;
+}
+>>>>>>> 1728bf5d25b5d6cd7ade0220e2829575dbb5a42a
 /*# sourceMappingURL=index.css.map */

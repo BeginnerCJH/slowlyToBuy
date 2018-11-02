@@ -1,7 +1,87 @@
 .index-menu {
+    padding: 0.1rem 0;
     display: flex;
     flex-wrap: wrap;
+    height: 3rem;
+    overflow: hidden;
     a {
+        padding: .08rem 0;
+        text-align: center;
+        font-size: 0.12rem;
         width: 25%;
+        img {
+            padding: .08rem 0;
+            margin: 0 auto;
+            width: 50%;
+        }
+    }
+}
+
+// 分割线
+.hr {
+    background-color: rgb(226, 226, 226);
+    height: 0.1rem;
+    width: 100%;
+}
+
+// 折扣
+.discount {
+    .discount_title {
+        color: #fff;
+        width: 100%;
+        font-size: 0.17rem;
+        display: flex;
+        justify-content: space-between;
+        background-image: linear-gradient(rgb(255, 174, 0), rgb(255, 123, 0));
+        padding: .1rem .1rem;
+    }
+    .discount_content {
+        a {
+            font-size: 0.14rem;
+            padding-top: .16rem;
+            padding-left: 120px;
+            padding-right: 0.08rem;
+            // height: 1.28rem;
+            border-bottom: 1px solid #ccc;
+            div:last-child {
+                font-size: 0.12rem;
+                color: rgb(153, 153, 153);
+            }
+            div:last-child {
+                padding-top: 0.38rem;
+                padding-bottom: 0.3rem;
+                display: flex;
+                justify-content: space-between;
+            }
+            .orange {
+                color: rgb(255, 115, 0);
+            }
+        }
+    }
+}
+
+// 更多
+.more {
+    padding: 0.1rem .1rem 0;
+    font-size: 0.12rem;
+    a {
+        border: 1px solid rgb(204, 204, 204);
+        background-color: rgb(240, 240, 240);
+        border-radius: 5px;
+        text-align: center;
+        padding: 0.08rem 0;
+    }
+}
+
+// 品牌排行
+.rand {
+    .rand_title {
+        color: #fff;
+        width: 100%;
+        font-size: 0.17rem;
+        display: flex;
+        justify-content: space-between;
+        background-image: linear-gradient(rgb(255, 174, 0), rgb(255, 123, 0));
+        padding: .1rem .1rem;
     }
 }
