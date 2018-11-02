@@ -22,8 +22,9 @@ var URLHandle={
   }
 };
 /* 返回上一业 */
-
-var back = document.querySelector(".hd-back");
-back.onclick=function () {
-  history.back();
+if (document.querySelector(".hd-back")){
+  var back = document.querySelector(".hd-back");
+  back.onclick = function () {
+    history.back();
+  }
 }

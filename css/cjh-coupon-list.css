@@ -6,7 +6,7 @@
 
 /*优惠券列表  */
 .cjh-coupon-list {
-  padding: .1rem .1rem .2rem .1rem;
+  padding: 1.1rem .1rem .2rem .1rem;
   border-bottom: 1px solid #efefef;
 }
 
@@ -63,4 +63,55 @@
   padding-top: .2rem;
   color: #f08525;
 }
+<<<<<<< HEAD
+=======
+
+/* 遮罩层 */
+.cjh-mark {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+}
+
+.cjh-mark .mark-top {
+  width: 100%;
+  height: 38.1%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 20;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.cjh-mark .mark-bottom {
+  width: 100%;
+  height: 38.05%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 20;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.cjh-mark .cjh-slide {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: rgba(0, 0, 0, 0.4);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  z-index: 20;
+}
+
+.cjh-mark .cjh-slide img {
+  width: 60%;
+  margin: 0 auto;
+}
+>>>>>>> dcf82b2da623e1bc51bc63816f6f8955844c86b2
 /*# sourceMappingURL=cjh-coupon-list.css.map */

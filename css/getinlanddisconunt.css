@@ -1,0 +1,41 @@
+.lzs-big-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.lzs-big-box .lzs-one {
+  width: 50%;
+  padding: .3rem .1rem 0;
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+.lzs-big-box .lzs-one:nth-child(even) {
+  border-right: none;
+}
+
+.lzs-big-box .lzs-one img {
+  width: 100%;
+}
+
+.lzs-big-box .lzs-one h4 {
+  font-size: .2rem;
+  padding: .1rem 0;
+  height: 1.2rem;
+}
+
+.lzs-big-box .lzs-one div {
+  color: red;
+  font-size: .18rem;
+  padding-bottom: .1rem;
+}
+
+.lzs-big-box .lzs-one p {
+  color: #ccc;
+  font-size: .14rem;
+  padding: .1rem 0;
+}
+/*# sourceMappingURL=getinlanddisconunt.css.map */
