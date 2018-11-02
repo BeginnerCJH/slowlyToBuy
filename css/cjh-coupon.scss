@@ -1,0 +1,36 @@
+/* 重置头部样式*/
+.cjh-coupon-head{
+  background: #f4483e;
+}
+
+/* 优惠券列表 */
+.cjh-coupon{
+  display: flex;
+  flex-wrap: wrap;
+  padding: .3rem .1rem .1rem;
+  >a{
+    width: 31.33%;
+    border: 1px solid #f6f6f6;
+    text-align: center;
+    padding-top: .08rem;
+    margin-bottom: .1rem;
+    margin-left: .1rem;
+    img{
+      width: 50%;
+      margin: 0 auto;
+    }
+    span{
+      font-size: .16rem;
+    }
+  }
+}
+/* 导航栏 */
+.cjh-nav{
+  background-image: linear-gradient(#fbfbfb,#ececec);
+  padding: .1rem 0 .1rem .2rem;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  >span{
+    font-size: .16rem;
+  }
+}

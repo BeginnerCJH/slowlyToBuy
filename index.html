@@ -5,57 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-
+    <title>mmp</title>
+    <!-- <script src="./js/media.js"></script> -->
     <link rel="stylesheet" href="./css/base.css">
     <link rel="stylesheet" href="./css/index.css">
-    <script src="./lib/zepto/zepto.min.js"></script>
-    <script src="./js/media.js"></script>
 </head>
 
 <body>
 
 
+    <!-- 头部 -->
+    <div class="logo-header clearfix">
+        <div class="logo fl"></div>
+        <div class="download fr"></div>
+    </div>
+    <!-- 搜索框 search -->
+    <div class="search clearfix">
+        <input class="fl" type="text" placeholder="请输入你想比价的商品">
+        <input class="fr" type="button" value="搜索">
+    </div>
+
+
+    <!-- 分割行 -->
+    <div class="hr"></div>
+
+
+
     <!-- 菜单 -->
     <div class="index-menu">
-        <a href="javascript:;">
-            <img src="./images/ic_search.png" alt=""> 比价搜索
-        </a>
-        <a href="javascript:;">
-            <img src="./images/ic_coudanpin.png" alt=""> 比价搜索
-        </a>
-        <a href="javascript:;">
-            <img src="./images/ic_coudanpin.png" alt=""> 比价搜索
-        </a>
-        <a href="javascript:;">
-            <img src="./images/ic_bcj.png" alt=""> 比价搜索
-        </a>
-        <a href="javascript:;">
-            <img src="./images/haitao.png" alt=""> 比价搜索
-        </a>
-        <a href="javascript:;">
-            <img src="./images/ic_temai.png" alt=""> 比价搜索
-        </a>
-        <a href="javascript:;">
-            <img src="./images/ic_trend.png" alt=""> 比价搜索
-        </a>
-        <a href="javascript:;">
-            <img src="./images/gengduo.png" alt="" class="loadmore"> 比价搜索
-        </a>
-        <!-- <div class="slideDown"> -->
-        <a href="javascript:;">
-            <img src="./images/ic_coudanpin.png" alt=""> 比价搜索
-        </a>
-        <a href="javascript:;">
-            <img src="./images/ic_kb.png" alt=""> 比价搜索
-        </a>
-        <a href="javascript:;">
-            <img src="./images/ic_mall.png" alt=""> 比价搜索
-        </a>
-        <a href="javascript:;">
-            <img src="./images/ic_pp.png" alt=""> 比价搜索
-        </a>
-        <!-- </div> -->
     </div>
 
 
@@ -70,32 +47,8 @@
             <a href="javascript:;"></a>
         </div>
         <div class="discount_content">
-            <a href="javascript:;">
-                <img src="" alt="">
-                <div>
-                    <span>移动端凑单品 : 海天 鲜味 牛抽</span><br>
-                    <span>1.28L<span class="orange">10.9元</span></span>
-                </div>
-                <div>
-                    <span>京东商城 | 10-25 14:10</span>
-                    <span><img src="" alt="">1</span>
-                </div>
-            </a>
-            <a href="javascript:;">
-                <img src="" alt="">
-                <div>
-                    <span>双11预售:日本进口尤妮佳/Moony</span>
-                    <span>婴儿纸尿裤M64*3包<span class="orange">25元定金+185元尾款</span></span>
-                </div>
-                <div>
-                    <span>天猫商城 | 10-25 13:57</span>
-                    <span><img src="" alt="">1</span>
-                </div>
-            </a>
-
         </div>
     </div>
-
 
 
     <!-- 更多 -->
@@ -115,16 +68,105 @@
             <a href="javascript:;">></a>
         </div>
     </div>
+
+
+    <!-- 尾部 -->
+    <footer>
+        <!-- 底部工具栏 -->
+        <div class="footer-tools">
+            <a href="javascript:;">登录</a>
+            <a href="javascript:;">注册</a>
+            <a href="javascript:;">返回顶部</a>
+        </div>
+        <!-- 版权信息 -->
+        <div class="footer-copyright">
+            <p>
+                <a href="javascript:;">手机APP下载</a> 慢慢买手机版
+                <span>-- 掌上比价平台</span>
+            </p>
+            <p>m.manmanbuy.com</p>
+        </div>
+    </footer>
 </body>
 
 </html>
 
-<script src="./lib/zepto/zepto.min.js"></script>
-<script>
-    $('.loadmore').tap(function() {
 
-        $('.index-menu>a:nth-last-child(-n+4)').css({
-            "height": "2px"
-        });
-    })
+<!-- 菜单模板 -->
+<script src="./lib/template/template.js"></script>
+<script type="text/template" id="menuTemplate">
+    {{each result as val key}}
+    <a href="{{val.titlehref}}" data-id="{{val.indexmenuId}}">
+        {{val.img}}
+        {{val.name}}
+    </a> {{/each}}
+</script>
+
+
+
+<!-- 折扣模板 -->
+<script type="text/template" id="discountTmp">
+    {{each result as val key}}
+    <a href="javascript:;" data-id="{{val.productId}}">
+        <div class="left">
+            {{val.productImgSm}}
+        </div>
+
+        <div class="right">
+            <p>{{val.productName}}
+                <span class="orange">
+                    {{val.productPinkage}}
+                </span>
+            </p>
+            <p>{{val.productFrom}} | {{val.productTime}}<span>{{val.productComCount}}</span></p>
+        </div>
+
+    </a> {{/each}}
+</script>
+
+
+
+<script src="./js/media.js"></script>
+<script src="./lib/zepto/zepto.min.js"></script>
+<script src="./js/index.js"></script>
+<script>
+    render();
+
+    function render() {
+        $.ajax({
+            url: 'http://193.112.55.79:9090/api/getindexmenu',
+            type: 'get',
+            dataType: 'jsonp',
+            success: function(res) {
+                console.log(res);
+
+                template.config('escape', false)
+                if (res) {
+
+                    var htmlStr = template('menuTemplate', res);
+                    // 动态渲染数据
+                    $('.index-menu').html(htmlStr);
+                }
+            }
+        })
+
+
+
+        $.ajax({
+            url: 'http://193.112.55.79:9090/api/getmoneyctrl',
+            type: 'get',
+            dataType: 'jsonp',
+            success: function(res) {
+                console.log(res);
+
+                template.config('escape', false)
+                if (res) {
+
+                    var htmlStr = template('discountTmp', res);
+                    // 动态渲染数据
+                    $('.discount_content').html(htmlStr);
+                }
+            }
+        })
+    }
 </script>

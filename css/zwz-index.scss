@@ -5,21 +5,26 @@
 
 /* 白菜价头部导航栏 */
 .zwz-nav{
-    display: flex;
-    justify-content: space-around;
+    overflow: hidden;
 
-    a{
-        background-color: #fff;
-        font-size: .24rem;
-        text-align: center;
-        height: 0.66rem;
-        line-height: 0.66rem;
-    }
+    .zwz-aa{
+        width: 160%;
 
-    .active{
-        color: #e4393c;
-        border-bottom: 2px solid #e4393c;
-    }
+        a{
+            background-color: #fff;
+            font-size: .24rem;
+            padding: 0 .1rem;
+            float: left;
+            text-align: center;
+            height: 0.66rem;
+            line-height: 0.66rem;
+        }
+
+        .active{
+            color: #e4393c;
+            border-bottom: 2px solid #e4393c;
+        }
+    }  
 }
 
 /* 白菜价商品 */

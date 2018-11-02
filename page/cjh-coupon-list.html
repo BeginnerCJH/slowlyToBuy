@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/cjh-coupon-list.css">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 头部 -->
+  <div class="content-header cjh-coupon-head">
+    <div class="hd-back"></div>
+    <div class="hd-title">
+      优惠券
+    </div>
+    <div class="hd-download"></div>
+  </div>
+
+  <!-- 优惠券列表 -->
+  <div class="cjh-coupon-list">
+  
+  </div>
+
+
+  <script src="../js/media.js"></script>
+  <script src="../lib//zepto/zepto.min.js"></script>
+  <script src="../lib/template/template.js"></script>
+  <script src="../js/utils.js"></script>
+  <!-- 模板 -->
+  <script id="couListTemp" type="text/template">
+     <div class="list-title">
+      --点餐前出示手机中的优惠券，即可享受优惠--
+    </div>
+    {{each result as val key}}
+     <div class="list-main clearfix">
+      <div class="coupon-img fl">
+        {{val.couponProductImg}}
+      </div>
+      <div class="coupon-content fr clearfix">
+          <div class="cou-con-left">
+              <p class="del">{{val.couponProductName}}</p>
+              <p class="money clearfix">
+                <span class="money-left fl">{{val.couponProductPrice}}</span>
+                <span class="money-right fr"></span>
+
+              </p>
+              <p class="data">{{val.couponProductTime}}</p>
+              
+          </div>
+      </div>
+    </div>
+
+    {{/each}}
+  </script>
+  <script>
+    // 获取地址栏参数中的id
+    var id=URLHandle.parameter(location.search).id;
+    // console.log(id);
+    // 发送ajax请求
+    $.ajax({
+      url:"http://193.112.55.79:9090/api/getcouponproduct",
+      type:"get",
+      data:{
+        couponid:id
+      },
+      dataType:"jsonp",
+      success:function (res) {
+        console.log(res);
+        template.config("escape",false);
+        // 调用模板方法
+        var htmlSrt=template("couListTemp",res);
+        $(".cjh-coupon-list").html(htmlSrt)
+        
+      }
+    });
+    
+
+  
+  </script>
+</body>
+</html>

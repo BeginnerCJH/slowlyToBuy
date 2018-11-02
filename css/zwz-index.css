@@ -6,22 +6,24 @@
 
 /* 白菜价头部导航栏 */
 .zwz-nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  overflow: hidden;
 }
 
-.zwz-nav a {
+.zwz-nav .zwz-aa {
+  width: 160%;
+}
+
+.zwz-nav .zwz-aa a {
   background-color: #fff;
   font-size: .24rem;
+  padding: 0 .1rem;
+  float: left;
   text-align: center;
   height: 0.66rem;
   line-height: 0.66rem;
 }
 
-.zwz-nav .active {
+.zwz-nav .zwz-aa .active {
   color: #e4393c;
   border-bottom: 2px solid #e4393c;
 }

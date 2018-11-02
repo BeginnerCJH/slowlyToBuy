@@ -18,13 +18,10 @@
         <div class="hd-download"></div>
     </div>
     <!-- 白菜价头部导航栏 -->
-    <div class="zwz-nav">
-        <a class="active" href="#zwz-all">全部</a>
-        <a href="#zwz-more">热销</a>
-        <a href="#">9块邮</a>
-        <a href="#">19块邮</a>
-        <a href="#">数码家电</a>
-        <a href="#">居家</a>
+    <div class="zwz-nav clearfix">
+        <div class="zwz-aa">
+
+        </div>
     </div>
 
     <!-- 白菜价商品 -->
@@ -54,8 +51,13 @@
 
 </body>
 
+<script src="../js/jquery-3.3.1.min.js"></script>
 <script src="../js/media.js"></script>
 <script src="../lib/template/template.js"></script>
+<script src="../lib/iscroll.js"></script>
+
+
+
 <script type="text/template" id="goodsTemp">
     {{each result as val key}}
         <a href="#">{{val.title}}</a>
@@ -64,7 +66,7 @@
 </html>
 
 <script>
-
+    // 这是头部导航栏的渲染
     $.ajax({
         type:'get',
         url:"http://193.112.55.79:9090/api/getbaicaijiatitle",
@@ -73,8 +75,32 @@
             var htmlStr = template('goodsTemp', res);
 
             // 动态渲染数据
-            $('#zwz-all').html(htmlStr);
+            $('.zwz-aa').html(htmlStr);
+             leftIscroll();
         }
     })
 
+   
+
+    function leftIscroll() {
+            // 初始化
+            var leftmyScroll = new IScroll('.zwz-nav',{
+            mouseWheel: true,
+            scrollX: true,
+            click: true});
+
+            $(".zwz-nav a").on("click",function (e) {
+                // 获取到被点击的 li 标签
+                var as = e.target;
+
+
+
+                // 给被点击的  li 标签添加 active 其他所有 li 标签移除类
+                $(as).addClass("active").siblings().removeClass("active");
+
+                // 将当前点击的 li 标签置顶
+                leftmyScroll.scrollToElement(as);
+
+            })
+        }
 </script>
