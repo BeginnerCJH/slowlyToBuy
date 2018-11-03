@@ -1,0 +1,107 @@
+/* 面包屑导航 */
+.cjh-breadcrumb-nav{
+  
+  border-top: #dbdbdb solid 1px;
+  border-bottom: #dbdbdb solid 1px;
+  padding-top: 1rem;
+  margin-bottom: .2rem;
+  >div{
+    padding: .2rem .2rem .2rem;
+  background-image: linear-gradient(#fefefe,#ececec);
+  font-size: .18rem;
+  >a{
+    display: inline;
+  }
+  }
+  
+}
+
+
+/* 销量排行 */
+.cjh-sales{
+  .sales-title{
+    padding: .2rem .3rem;
+    background: #f3f3f3;
+    font-size: .16rem;
+    color: #8e3d1b;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+  }
+  .sales-main{
+    padding: .2rem .1rem;
+    background: #fff;
+    border-top: 1px solid #cccccc;
+    .sales-img{
+      width: 30%;
+      img{
+        width: 80%;
+      }
+    }
+    .sales-del{
+      width: 70%;
+      color: #4d4d4d;
+       font-size: .18rem;
+      .del-title{
+       line-height: .35rem;
+      }
+      .del-money{
+        padding-top: .08rem;
+        display: flex;
+        justify-content: space-between;
+        .price{
+          color: red;
+          font-size: .26rem;
+        }
+        .star{
+          color: #ff9000;
+          font-size: .26rem;
+        }
+      }
+      .del-order{
+        padding-top: .08rem;
+        color: #c9c9c9;
+        font-size: .12rem;
+        .bao{}
+        .comment{
+          padding-left: .1rem;
+        }
+      }
+    }
+  }
+  .com{
+    
+    padding: .1rem;
+    font-size: .28rem;
+    display: none;
+    .box{
+      border: 1px solid #ccc;
+      background: #f8f8f8;
+      margin-bottom: .01rem;
+      .top{
+      .zuo{
+        padding-right: .16rem;
+      }
+      .stat1{
+        color: #ff9000;
+        
+      }
+      .date{
+        color: #cad4e1;
+        font-size: .12rem;
+      }
+    }
+    .com-mian{
+        padding: .1rem;
+        font-size: .14rem;
+        line-height: .30rem;
+    }
+    
+    }
+    .shouqi{
+      float:right;
+      font-size: .22rem;
+      padding: .1rem;
+    }
+  }
+}
+

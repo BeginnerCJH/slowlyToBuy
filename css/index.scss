@@ -2,18 +2,17 @@
     padding: 0.1rem 0;
     display: flex;
     flex-wrap: wrap;
+    height: 3rem;
+    overflow: hidden;
     a {
         padding: .08rem 0;
         text-align: center;
-        font-size: 0.21rem;
+        font-size: 0.12rem;
         width: 25%;
         img {
             padding: .08rem 0;
             margin: 0 auto;
             width: 50%;
-        }
-        &:nth-last-child(-n+4) {
-            display: none;
         }
     }
 }
@@ -30,7 +29,7 @@
     .discount_title {
         color: #fff;
         width: 100%;
-        font-size: 0.22rem;
+        font-size: 0.17rem;
         display: flex;
         justify-content: space-between;
         background-image: linear-gradient(rgb(255, 174, 0), rgb(255, 123, 0));
@@ -38,29 +37,21 @@
     }
     .discount_content {
         a {
-            display: flex;
+            font-size: 0.14rem;
+            padding-top: .16rem;
+            padding-left: 120px;
+            padding-right: 0.08rem;
+            // height: 1.28rem;
             border-bottom: 1px solid #ccc;
-            font-size: 0.23rem;
-            padding: .1rem .1rem;
-            .left {
-                padding: .15rem 0;
-                width: 35%;
+            div:last-child {
+                font-size: 0.12rem;
+                color: rgb(153, 153, 153);
             }
-            .right {
-                margin-left: 0.18rem;
-                flex: 1;
+            div:last-child {
                 padding-top: 0.38rem;
-                p {
-                    &:first-child {
-                        height: 70%;
-                    }
-                    &:last-child {
-                        height: 30%;
-                        color: rgb(182, 181, 181);
-                        display: flex;
-                        justify-content: space-between;
-                    }
-                }
+                padding-bottom: 0.3rem;
+                display: flex;
+                justify-content: space-between;
             }
             .orange {
                 color: rgb(255, 115, 0);
@@ -72,7 +63,7 @@
 // 更多
 .more {
     padding: 0.1rem .1rem 0;
-    font-size: 0.22rem;
+    font-size: 0.12rem;
     a {
         border: 1px solid rgb(209, 209, 209);
         background-image: linear-gradient(rgb(245, 245, 245), rgb(218, 218, 218));
@@ -87,7 +78,7 @@
     .rand_title {
         color: #fff;
         width: 100%;
-        font-size: 0.22rem;
+        font-size: 0.17rem;
         display: flex;
         justify-content: space-between;
         background-image: linear-gradient(rgb(255, 174, 0), rgb(255, 123, 0));

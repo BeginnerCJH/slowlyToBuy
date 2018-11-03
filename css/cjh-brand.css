@@ -62,7 +62,11 @@
   display: none;
 }
 
+<<<<<<< HEAD
 .cjh-hot-brand .hb-main .ul-hb li .brand-list li {
+=======
+.cjh-hot-brand .hb-main .ul-hb li .brand-list li > a {
+>>>>>>> 07df32ba1ea7d8484b1acc15c4fdc75535e3da3c
   padding: .1rem;
   background: #fff;
   border-bottom: #dbdbdb solid 1px;
@@ -71,7 +75,11 @@
   display: flex;
 }
 
+<<<<<<< HEAD
 .cjh-hot-brand .hb-main .ul-hb li .brand-list li .ranking {
+=======
+.cjh-hot-brand .hb-main .ul-hb li .brand-list li > a .ranking {
+>>>>>>> 07df32ba1ea7d8484b1acc15c4fdc75535e3da3c
   background: #cccccc;
   width: 1.4em;
   height: 1.4em;
@@ -88,6 +96,7 @@
   margin-right: .1rem;
 }
 
+<<<<<<< HEAD
 .cjh-hot-brand .hb-main .ul-hb li .brand-list li:first-child .ranking {
   background: #f10e0e;
 }
@@ -101,22 +110,37 @@
 }
 
 .cjh-hot-brand .hb-main .ul-hb li .brand-list li .list-content {
+=======
+.cjh-hot-brand .hb-main .ul-hb li .brand-list li > a .list-content {
+>>>>>>> 07df32ba1ea7d8484b1acc15c4fdc75535e3da3c
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
+<<<<<<< HEAD
 .cjh-hot-brand .hb-main .ul-hb li .brand-list li .list-content > p:first-child {
+=======
+.cjh-hot-brand .hb-main .ul-hb li .brand-list li > a .list-content > p:first-child {
+>>>>>>> 07df32ba1ea7d8484b1acc15c4fdc75535e3da3c
   font-weight: 700;
   font-size: .22rem;
 }
 
+<<<<<<< HEAD
 .cjh-hot-brand .hb-main .ul-hb li .brand-list li .list-content > p:last-child {
+=======
+.cjh-hot-brand .hb-main .ul-hb li .brand-list li > a .list-content > p:last-child {
+>>>>>>> 07df32ba1ea7d8484b1acc15c4fdc75535e3da3c
   color: #cccccc;
   font-size: .12rem;
 }
 
+<<<<<<< HEAD
 .cjh-hot-brand .hb-main .ul-hb li .brand-list li .list-arr {
+=======
+.cjh-hot-brand .hb-main .ul-hb li .brand-list li > a .list-arr {
+>>>>>>> 07df32ba1ea7d8484b1acc15c4fdc75535e3da3c
   width: .12rem;
   height: .12rem;
   border-top: 1px #666 solid;
@@ -125,4 +149,19 @@
           transform: rotate(45deg);
   margin: auto 0;
 }
+<<<<<<< HEAD
+=======
+
+.cjh-hot-brand .hb-main .ul-hb li .brand-list li:first-child .ranking {
+  background: #f10e0e;
+}
+
+.cjh-hot-brand .hb-main .ul-hb li .brand-list li:nth-child(2) .ranking {
+  background: #ff9211;
+}
+
+.cjh-hot-brand .hb-main .ul-hb li .brand-list li:nth-child(3) .ranking {
+  background: #85de59;
+}
+>>>>>>> 07df32ba1ea7d8484b1acc15c4fdc75535e3da3c
 /*# sourceMappingURL=cjh-brand.css.map */

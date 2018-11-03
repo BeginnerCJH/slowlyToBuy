@@ -1,10 +1,7 @@
 .qlj-items {
   background-color: #eeeeee;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .qlj-items a {
@@ -27,12 +24,8 @@
 }
 
 .qlj-items a div {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   padding-bottom: 0.08rem;
   font-size: 0.14rem;
 }
@@ -52,12 +45,8 @@
 .navbar {
   height: 0.6rem;
   line-height: 0.6rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  justify-content: space-between;
   font-size: 0.22rem;
   position: relative;
 }
@@ -101,4 +90,3 @@
   background: url(../images/icon_bar.png) no-repeat -0.1rem -0.15rem;
   background-size: 4.2rem;
 }
-/*# sourceMappingURL=qlj-gather-item.css.map */

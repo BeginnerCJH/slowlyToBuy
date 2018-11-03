@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/cjh-coupon-list.css">
+  <link rel="stylesheet" href="../lib/swiper/swiper.min.css">
   <title>Document</title>
 </head>
 <body>
@@ -19,15 +20,30 @@
   </div>
 
   <!-- 优惠券列表 -->
-  <div class="cjh-coupon-list">
+  <div class="cjh-coupon-list clearfix">
   
   </div>
 
+  <!-- 遮罩层 -->
+  <div class="cjh-mark">
+   
+    <div class="swiper-container cjh-slide">
+      <div class="swiper-wrapper">
 
+      </div>
+      <!-- 导航器 -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+   
+  </div>
+
+
+  <script src="../js/jquery-3.3.1.min.js"></script>
   <script src="../js/media.js"></script>
-  <script src="../lib//zepto/zepto.min.js"></script>
   <script src="../lib/template/template.js"></script>
   <script src="../js/utils.js"></script>
+  <script src="../lib/swiper/swiper.min.js"></script>
   <!-- 模板 -->
   <script id="couListTemp" type="text/template">
      <div class="list-title">
@@ -54,11 +70,26 @@
 
     {{/each}}
   </script>
+<script id="couslideTemp" type="text/template">
+    
+    {{each result as val key}}
+          <!-- slide 轮播项 -->
+      <div class="swiper-slide">
+        {{val.couponProductImg}}
+      </div>
+    {{/each}}
+    
+  </script>
+
+
+  <!-- 轮播模板 -->
+
   <script>
+    /* 1 */
     // 获取地址栏参数中的id
     var id=URLHandle.parameter(location.search).id;
     // console.log(id);
-    // 发送ajax请求
+    // 轮播图发送ajax请求
     $.ajax({
       url:"http://193.112.55.79:9090/api/getcouponproduct",
       type:"get",
@@ -70,14 +101,48 @@
         console.log(res);
         template.config("escape",false);
         // 调用模板方法
-        var htmlSrt=template("couListTemp",res);
-        $(".cjh-coupon-list").html(htmlSrt)
+        var htmlSrt=template("couslideTemp",res);
+        $(".swiper-wrapper").html(htmlSrt)
         
+         var swiper = new Swiper('.swiper-container', {
+         
+          /* 导航器 */
+          navigation: {
+            /* 下一个 */
+            nextEl: '.swiper-button-next',
+            /* 上一个 */
+            prevEl: '.swiper-button-prev',
+          },
+        });
       }
     });
     
 
-  
+    // 页面发送ajax请求
+    $.ajax({
+        url: "http://193.112.55.79:9090/api/getcouponproduct",
+        type: "get",
+        data: {
+          couponid: id
+        },
+        dataType: "jsonp",
+        success: function (res) {
+          console.log(res);
+          template.config("escape", false);
+          // 调用模板方法
+          var htmlSrt = template("couListTemp", res);
+          $(".cjh-coupon-list").html(htmlSrt)
+
+        }
+      });
+    
+    /* 2点击发现 */
+    
+    $(".cjh-coupon-list").on("click",".coupon-img img",function () {
+      $(".cjh-mark").fadeIn();
+    });
+
+ 
   </script>
 </body>
 </html>

@@ -53,6 +53,10 @@
         .brand-list{
           display: none;
           li{
+<<<<<<< HEAD
+=======
+            >a{
+>>>>>>> 07df32ba1ea7d8484b1acc15c4fdc75535e3da3c
             padding: .1rem;
             background: #fff;
             border-bottom: #dbdbdb solid 1px;
@@ -67,6 +71,7 @@
               justify-content: center;
               align-content: center;
               margin-right: .1rem;
+<<<<<<< HEAD
              
             }
              &:first-child .ranking{
@@ -78,6 +83,13 @@
                &:nth-child(3) .ranking{
                   background: #85de59;
               }
+=======
+              
+            }
+             
+             
+             
+>>>>>>> 07df32ba1ea7d8484b1acc15c4fdc75535e3da3c
             .list-content{
               flex: 1;
               >p{
@@ -99,6 +111,20 @@
               transform: rotate(45deg);
               margin: auto 0;
             }
+<<<<<<< HEAD
+=======
+            }
+
+             &:first-child .ranking{
+                  background: #f10e0e;
+              }
+               &:nth-child(2) .ranking{
+                  background: #ff9211;
+              }
+               &:nth-child(3) .ranking{
+                  background: #85de59;
+              }
+>>>>>>> 07df32ba1ea7d8484b1acc15c4fdc75535e3da3c
           }
         }
       }
