@@ -1,0 +1,133 @@
+@charset "UTF-8";
+/* 重置头部样式 */
+.zwz-header {
+  background-color: #f4483e;
+}
+
+/* 白菜价头部导航栏 */
+.zwz-nav {
+  overflow: hidden;
+}
+
+.zwz-nav .zwz-aa {
+  width: 160%;
+}
+
+.zwz-nav .zwz-aa a {
+  background-color: #fff;
+  font-size: .24rem;
+  padding: 0 .1rem;
+  float: left;
+  text-align: center;
+  height: 0.66rem;
+  line-height: 0.66rem;
+}
+
+.zwz-nav .zwz-aa .active {
+  color: #e4393c;
+  border-bottom: 2px solid #e4393c;
+}
+
+/* 白菜价商品 */
+.zwz-ware .zw-one {
+  border-top: 10px solid #f7f7f7;
+  padding: .22rem .08rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.zwz-ware .zw-one .zw-img {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+.zwz-ware .zw-one .zw-content .zc-title {
+  font-size: .22rem;
+}
+
+.zwz-ware .zw-one .zw-content .zc-price {
+  padding-top: .34rem;
+  color: #fc5a5e;
+  vertical-align: middle;
+}
+
+.zwz-ware .zw-one .zw-content .zc-price .rmb {
+  font-size: .18rem;
+}
+
+.zwz-ware .zw-one .zw-content .zc-price .num {
+  font-size: .32rem;
+  padding-top: 0.02rem;
+}
+
+.zwz-ware .zw-one .zw-content .zc-price del {
+  color: #a8a8a8;
+  font-size: .18rem;
+}
+
+.zwz-ware .zw-one .zw-content .zc-progress {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 0.38rem;
+}
+
+.zwz-ware .zw-one .zw-content .zc-progress .zp-ress {
+  width: 1.36rem;
+  background-color: #ffb7b7;
+  border: 2px solid #fc353a;
+  border-radius: .2rem;
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.zwz-ware .zw-one .zw-content .zc-progress .zp-ress > span {
+  color: #fff;
+  font-size: .16rem;
+}
+
+.zwz-ware .zw-one .zw-content .zc-progress .zp-font {
+  font-size: .20rem;
+  padding-left: .16rem;
+  color: #fc353a;
+}
+
+.zwz-ware .zw-one .zw-content .zc-coupon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-top: 0.16rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 4.34rem;
+}
+
+.zwz-ware .zw-one .zw-content .zc-coupon .zcp-five {
+  height: 0.46rem;
+  line-height: 0.46rem;
+  font-size: .22rem;
+  border: 2px dashed #e4393c;
+  color: #e4393c;
+  width: 2.08rem;
+  text-align: center;
+}
+
+.zwz-ware .zw-one .zw-content .zc-coupon .zcp-btn {
+  background-color: #ff5e5d;
+  height: 0.5rem;
+  line-height: 0.5rem;
+  font-size: .22rem;
+  color: #fff;
+  padding: 0 .05rem;
+  border-radius: 5px;
+}
+/*# sourceMappingURL=zwz-index.css.map */

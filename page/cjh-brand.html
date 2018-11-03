@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/cjh-brand.css">
+  <title>Document</title>
+</head>
+<body>
+
+  <!-- 头部 -->
+  <div class="logo-header clearfix">
+    <div class="logo fl"></div>
+    <div class="download fr"></div>
+  </div>
+  <!-- 搜索框 search -->
+  <div class="search clearfix">
+    <input class="fl" type="text" placeholder="请输入你想比价的商品">
+    <input class="fr" type="button" value="搜索">
+  </div>
+
+  <!-- 面包屑导航 -->
+  <div class="cjh-breadcrumb-nav">
+    <span>首页</span>
+    <span> > </span>
+    <a href="javascript:;">全部分类</a>
+    <span> > </span>
+  </div>
+
+  <!-- 热门品牌排行 -->
+  <div class="cjh-hot-brand">
+    <div class="hb-title">
+      热门品牌排行
+    </div>
+    <div class="hb-main">
+        <ul class="ul-hb">
+
+        </ul>
+    </div>
+
+  </div>
+
+
+
+
+  <!-- 底部 -->
+  <footer>
+    <!-- 底部工具栏 -->
+    <div class="footer-tools">
+      <a href="javascript:;">登录</a>
+      <a href="javascript:;">注册</a>
+      <a href="javascript:;">返回顶部</a>
+    </div>
+    <!-- 版权信息 -->
+    <div class="footer-copyright">
+      <p>
+        <a href="javascript:;">手机APP下载</a>
+        慢慢买手机版
+        <span>-- 掌上比价平台</span>
+      </p>
+      <p>m.manmanbuy.com</p>
+    </div>
+  </footer>
+  
+    <script src="../js/media.js"></script>
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../lib/template/template.js"></script>
+    <script src="../js/utils.js"></script>
+
+    <!-- 模板  热门品牌 -->
+    <script type="text/template" id="hotBrandTemp">
+        {{each result as val key}}
+          <li>
+            <a class="li-brand"    data-id="{{val.brandTitleId}}" href="javascript:;">{{val.brandTitle}}
+              <span class="li-arr"></span>
+            </a>
+            <ul class="brand-list">
+             
+                </div>  
+              </li>
+            </ul>
+          </li>
+        {{/each}}
+    </script>
+
+    <!-- 模板  品牌列表 -->
+    <script type="text/template" id="brandListTemp">
+            {{each result as val key}}
+              <li>
+                <div class="ranking">{{key+1}}</div>  
+                <div class="list-content">
+                  <p>{{val.brandName}}</p>
+                  <p>{{val.brandInfo}}</p>
+                </div>  
+                <div class="list-arr"></div>  
+              </li>
+             
+            {{/each}}
+        </script>
+
+
+    <script>
+    /* 1请求品牌数据 */
+    $.ajax({
+      url:"http://193.112.55.79:9090/api/getbrandtitle",
+      type:"get",
+      dataType:"jsonp",
+      success:function (res) {
+        /* 调用模板方法 */
+        var htmlStr=template("hotBrandTemp",res);
+        $(".ul-hb").html(htmlStr);
+        
+      }
+    });
+    
+    /* 2给每个品牌注册事件 */
+    $(".ul-hb").on("click",".li-brand",function () {
+      // 显示和隐藏
+      $(this).siblings().slideToggle();
+      $(this).parent().siblings().children(".brand-list").slideUp();
+      // console.log('aaa');
+      // 获取对应的id
+      var brandtitleid=$(this).attr("data-id");
+      // console.log(brandtitleid);
+      // 第2次发送ajax请求 请求列表
+      $.ajax({
+        url:"http://193.112.55.79:9090/api/getbrand",
+        type:"get",
+        data:{
+          brandtitleid: brandtitleid
+        },
+        dataType:"jsonp",
+        success:function (res) {
+          console.log(res);
+          
+            /* 调用模板方法 */
+          var htmlStr = template("brandListTemp", res);
+          $(".brand-list").html(htmlStr);
+          
+        }
+      });
+      
+    })
+    </script>
+</body>
+</html>

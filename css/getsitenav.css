@@ -1,0 +1,28 @@
+.lzs-box {
+  margin: 0.2rem .88rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.lzs-box a {
+  color: #000;
+  background-color: #ccc;
+  border: 1px solid #999;
+  text-align: right;
+  margin: .05rem;
+  padding: .2rem;
+  padding-left: .3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: .2rem;
+}
+
+.lzs-box a img {
+  width: .3rem;
+  padding-right: .05rem;
+}
+/*# sourceMappingURL=getsitenav.css.map */
