@@ -1,0 +1,104 @@
+.qlj-items {
+  background-color: #eeeeee;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.qlj-items a {
+  background-color: #fff;
+  width: 50%;
+  border: 0.08rem solid #e4e4e4;
+  padding: 0 .08rem;
+}
+
+.qlj-items a img {
+  height: 78%;
+}
+
+.qlj-items a p {
+  font-size: 0.12rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-bottom: .08rem;
+}
+
+.qlj-items a div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 0.08rem;
+  font-size: 0.14rem;
+}
+
+.qlj-items a div .red {
+  color: red;
+  font-size: 0.25rem;
+}
+
+.qlj-items a div span:last-child {
+  background-color: #ff9900;
+  color: #fff;
+  border-radius: 3px;
+  padding: .03rem .1rem;
+}
+
+.navbar {
+  height: 0.6rem;
+  line-height: 0.6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 0.22rem;
+  position: relative;
+}
+
+.navbar div {
+  padding-left: 0.1rem;
+  position: relative;
+}
+
+.navbar div:after {
+  content: "";
+  position: absolute;
+  right: -.3rem;
+  top: .27rem;
+  width: 0;
+  height: 0;
+  border-width: .1rem;
+  border-style: solid;
+  border-color: #666 transparent transparent transparent;
+}
+
+.navbar ul {
+  border-top: 1px solid #ccc;
+  display: none;
+  top: 0.6rem;
+  left: 0;
+  position: absolute;
+  background-color: #fff;
+  width: 100%;
+}
+
+.navbar ul li {
+  border-bottom: 1px solid #ccc;
+  padding-left: .3rem;
+}
+
+.navbar a {
+  width: 10%;
+  border-left: 1px solid #ccc;
+  height: 100%;
+  background: url(../images/icon_bar.png) no-repeat -0.1rem -0.15rem;
+  background-size: 4.2rem;
+}
+/*# sourceMappingURL=qlj-gather-item.css.map */

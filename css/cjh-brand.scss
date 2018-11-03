@@ -1,0 +1,107 @@
+/* 面包屑导航 */
+.cjh-breadcrumb-nav{
+  
+  border-top: #dbdbdb solid 1px;
+  border-bottom: #dbdbdb solid 1px;
+  padding: .2rem;
+  background-image: linear-gradient(#fefefe,#ececec);
+  font-size: .18rem;
+  margin-bottom: .2rem;
+  >a{
+    display: inline;
+  }
+}
+
+/*热门品牌排行  */
+.cjh-hot-brand{
+  .hb-title{
+    padding: .2rem .25rem;
+    background:#eeeeee;
+    margin-bottom: .2rem;
+    color: #9a652e;
+    border-top: #dbdbdb solid 1px;
+    border-bottom: #dbdbdb solid 1px;
+    font-size: .16rem;
+  }
+  .hb-main{
+    border-top: #dbdbdb solid 1px;
+    
+    margin-bottom: .2rem;
+    .ul-hb{
+      li{
+        background:#eeeeee;
+        font-size: .14rem;
+        
+        
+        a{
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            padding: .2rem .3rem;
+            border-bottom: #dbdbdb solid 1px;
+            
+          .li-arr{
+          display: block;
+          content: "";
+          width: .12rem;
+          height: .12rem;
+          border-top: 1px #666 solid;
+          border-right: 1px #666 solid;
+          transform: rotate(135deg);
+        }
+        }
+        .brand-list{
+          display: none;
+          li{
+            padding: .1rem;
+            background: #fff;
+            border-bottom: #dbdbdb solid 1px;
+            display: flex;
+            .ranking{
+              background: #cccccc;
+              width: 1.4em;
+              height: 1.4em;
+              font-size: .12rem;
+              color: #fff;
+              display: flex;
+              justify-content: center;
+              align-content: center;
+              margin-right: .1rem;
+             
+            }
+             &:first-child .ranking{
+                  background: #f10e0e;
+              }
+               &:nth-child(2) .ranking{
+                  background: #ff9211;
+              }
+               &:nth-child(3) .ranking{
+                  background: #85de59;
+              }
+            .list-content{
+              flex: 1;
+              >p{
+                &:first-child{
+                  font-weight: 700;
+                  font-size: .22rem
+                }
+                &:last-child{
+                  color: #cccccc;
+                  font-size: .12rem;
+                }
+              }
+            }
+            .list-arr{
+              width: .12rem;
+              height: .12rem;
+              border-top: 1px #666 solid;
+              border-right: 1px #666 solid;
+              transform: rotate(45deg);
+              margin: auto 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

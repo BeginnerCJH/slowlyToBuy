@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/qlj-gather-item.css">
+</head>
+
+<body>
+
+
+    <!-- 头部 -->
+    <div class="content-header">
+        <div class="hd-back"></div>
+        <div class="hd-title">
+            凑单品
+        </div>
+        <div class="hd-download"></div>
+    </div>
+
+
+    <!-- 筛选 -->
+    <div class="navbar">
+
+        <div>京东</div>
+        <ul name="shop" id="shop">
+            <li>发觉我i</li>
+            <li>发觉我i</li>
+            <li>发觉我i</li>
+        </ul>
+
+        <div>华东</div>
+        <ul name="address" id="address">
+        </ul>
+
+        <div>全部价格</div>
+        <ul name="price" id="price">
+            <li>全部价格</li>
+        </ul>
+
+
+        <a href="javascript:;">
+        </a>
+    </div>
+
+
+    <!-- 内容 -->
+    <div class="qlj-items">
+    </div>
+
+
+
+    <!-- 尾部 -->
+    <footer>
+        <!-- 底部工具栏 -->
+        <div class="footer-tools">
+            <a href="javascript:;">登录</a>
+            <a href="javascript:;">注册</a>
+            <a href="javascript:;">返回顶部</a>
+        </div>
+        <!-- 版权信息 -->
+        <div class="footer-copyright">
+            <p>
+                <a href="javascript:;">手机APP下载</a> 慢慢买手机版
+                <span>-- 掌上比价平台</span>
+            </p>
+            <p>m.manmanbuy.com</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+
+
+<!-- 内容模板 -->
+<script src="../lib/template/template.js"></script>
+
+<!-- 店铺模板 -->
+<script type="text/template" id="shopTmp">
+    {{each result as val key}}
+    <li data-id="{{val.shopId}}" class="myli">{{val.shopName}}</li>
+    {{/each}}
+</script>
+
+<!-- 地区模板 -->
+<script type="text/template" id="addressTmp">
+    {{each result as val key}}
+    <li data-id="{{val.areaId}}" class="myli">{{val.areaName}} </li>
+    {{/each}}
+</script>
+
+<!-- 商品列表 -->
+<script type="text/template" id="productTmp">
+    {{each result as val key}}
+    <a href="javascript:;">
+        <img src="{{val.productImg}}" alt="">
+        <p>{{val.productName}}</p>
+        <div>
+            <span class="red">{{val.productPrice}}</span>
+            <span>去凑单</span>
+        </div>
+    </a>
+    {{/each}}
+</script>
+
+
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/media.js"></script>
+<script>
+    var shopid;
+    var areaid;
+    render();
+    // 店铺
+    $.ajax({
+        url: 'http://193.112.55.79:9090/api/getgsshop',
+        type: 'get',
+        dataType: 'jsonp',
+        success: function(res) {
+            template.config('escape', false)
+            if (res) {
+                var htmlStr = template('shopTmp', res);
+                // 动态渲染数据
+                $('#shop').html(htmlStr);
+                // 获得当前索引
+                $('#shop li').on('click', function() {
+                    shopid = $(this)[0].dataset.id;
+                    render();
+                })
+            }
+        }
+    })
+
+
+    // 地区
+    $.ajax({
+            url: 'http://193.112.55.79:9090/api/getgsshoparea',
+            type: 'get',
+            dataType: 'jsonp',
+            success: function(res) {
+                template.config('escape', false)
+                if (res) {
+
+                    var htmlStr = template('addressTmp', res);
+                    // 动态渲染数据
+                    $('#address').html(htmlStr);
+                    // 获得当前索引
+                    $('#address li').on('click', function() {
+                        areaid = $(this)[0].dataset.id;
+                        render();
+                    })
+                }
+            }
+        })
+        // 商品列表
+    function render() {
+        $.ajax({
+            url: 'http://193.112.55.79:9090/api/getgsproduct',
+            type: 'get',
+            dataType: 'jsonp',
+            data: {
+                shopid: shopid || 0,
+                areaid: areaid || 0
+            },
+            success: function(res) {
+                // console.log(res);
+                if (res) {
+                    var htmlStr = template('productTmp', res);
+                    // 动态渲染数据
+                    $('.qlj-items').html(htmlStr);
+                }
+            }
+        })
+    }
+
+
+    $('.navbar div').on('click', function() {
+        $(this).next('ul').stop().slideToggle(300).siblings('ul').hide();
+    })
+    $('.navbar').on('click', '.myli', function() {
+        var text = $(this).text();
+        $(this).parent().prev('div').text(text);
+        $('.navbar ul').hide();
+    })
+</script>

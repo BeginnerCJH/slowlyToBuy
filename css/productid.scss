@@ -1,0 +1,98 @@
+.lzs-box {
+    padding: .2rem .1rem .1rem;
+    // text-align: center;
+    h3 {
+        font-size: .2rem;
+        font-weight: 400;
+        letter-spacing: .05rem;
+    }
+    .lzs-price {
+        color: red;
+        font-size: .16rem;
+        padding: .1rem 0;
+    }
+    .lzs-mall {
+        color: #ccc;
+        font-size: .13rem;
+    }
+    .lzs-time {
+        color: #ccc;
+        font-size: .13rem;
+    }
+    .lzs-site {
+        color: #ccc;
+        font-size: .13rem;
+    }
+    p {
+        padding: .2rem 0 .1rem;
+        font-size: .15rem;
+        letter-spacing: .03rem;
+    }
+    a {
+        background-color: orange;
+        color: white;
+        font-size: .15rem;
+        border-radius: .05rem;
+        padding: .05rem 0;
+        text-align: center;
+        // width: 80%;
+        margin: .3rem .55rem;
+    }
+    ul {
+        margin: 0 auto;
+        width: 2rem;
+        li {
+            border-bottom: 1px dashed #ccc;
+            padding: 0 .2rem;
+            .left {
+                color: #000;
+            }
+            .right {
+                color: red;
+            }
+        }
+    }
+    .lzs-code {
+        display: flex;
+        border: 1px solid red;
+        margin: .1rem;
+        padding: .2rem;
+    }
+    .lzs-discuss {
+        .tit {
+            font-size: .15rem;
+            padding: .1rem .1rem;
+        }
+        .reply {
+            border: 1px solid #ccc;
+            padding-bottom: .4rem;
+            // border-top: none;
+            margin-top: .1rem;
+            textarea {
+                width: 100%;
+            }
+            .ctrl {
+                // width: 100%;
+                // float: right;
+                input {
+                    // width: 100%;
+                    // line-height: 0;
+                    background-color: #fff;
+                    display: block;
+                    background-color: orange;
+                    color: #fff;
+                    padding: .1rem;
+                    float: right;
+                    margin-right: .2rem;
+                }
+            }
+        }
+        .tit {
+            font-size: .15rem;
+            padding: .1rem .1rem;
+        }
+        .list {
+            width: 100%;
+        }
+    }
+}
