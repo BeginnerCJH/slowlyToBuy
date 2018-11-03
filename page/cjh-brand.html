@@ -26,7 +26,6 @@
     <span>首页</span>
     <span> > </span>
     <a href="javascript:;">全部分类</a>
-    <span> > </span>
   </div>
 
   <!-- 热门品牌排行 -->
@@ -89,12 +88,14 @@
     <script type="text/template" id="brandListTemp">
             {{each result as val key}}
               <li>
-                <div class="ranking">{{key+1}}</div>  
-                <div class="list-content">
+                <a href="./cjh-brand-list.html?brandtitleid={{val.brandTitleId}}&pagesize=4">
+                  <div class="ranking">{{key+1}}</div>  
+                  <div class="list-content">
                   <p>{{val.brandName}}</p>
                   <p>{{val.brandInfo}}</p>
                 </div>  
                 <div class="list-arr"></div>  
+                </a>
               </li>
              
             {{/each}}

@@ -62,7 +62,7 @@
   display: none;
 }
 
-.cjh-hot-brand .hb-main .ul-hb li .brand-list li {
+.cjh-hot-brand .hb-main .ul-hb li .brand-list li > a {
   padding: .1rem;
   background: #fff;
   border-bottom: #dbdbdb solid 1px;
@@ -71,7 +71,7 @@
   display: flex;
 }
 
-.cjh-hot-brand .hb-main .ul-hb li .brand-list li .ranking {
+.cjh-hot-brand .hb-main .ul-hb li .brand-list li > a .ranking {
   background: #cccccc;
   width: 1.4em;
   height: 1.4em;
@@ -88,6 +88,32 @@
   margin-right: .1rem;
 }
 
+.cjh-hot-brand .hb-main .ul-hb li .brand-list li > a .list-content {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.cjh-hot-brand .hb-main .ul-hb li .brand-list li > a .list-content > p:first-child {
+  font-weight: 700;
+  font-size: .22rem;
+}
+
+.cjh-hot-brand .hb-main .ul-hb li .brand-list li > a .list-content > p:last-child {
+  color: #cccccc;
+  font-size: .12rem;
+}
+
+.cjh-hot-brand .hb-main .ul-hb li .brand-list li > a .list-arr {
+  width: .12rem;
+  height: .12rem;
+  border-top: 1px #666 solid;
+  border-right: 1px #666 solid;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  margin: auto 0;
+}
+
 .cjh-hot-brand .hb-main .ul-hb li .brand-list li:first-child .ranking {
   background: #f10e0e;
 }
@@ -98,31 +124,5 @@
 
 .cjh-hot-brand .hb-main .ul-hb li .brand-list li:nth-child(3) .ranking {
   background: #85de59;
-}
-
-.cjh-hot-brand .hb-main .ul-hb li .brand-list li .list-content {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-}
-
-.cjh-hot-brand .hb-main .ul-hb li .brand-list li .list-content > p:first-child {
-  font-weight: 700;
-  font-size: .22rem;
-}
-
-.cjh-hot-brand .hb-main .ul-hb li .brand-list li .list-content > p:last-child {
-  color: #cccccc;
-  font-size: .12rem;
-}
-
-.cjh-hot-brand .hb-main .ul-hb li .brand-list li .list-arr {
-  width: .12rem;
-  height: .12rem;
-  border-top: 1px #666 solid;
-  border-right: 1px #666 solid;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  margin: auto 0;
 }
 /*# sourceMappingURL=cjh-brand.css.map */

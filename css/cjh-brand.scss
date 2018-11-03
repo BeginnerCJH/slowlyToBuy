@@ -53,6 +53,7 @@
         .brand-list{
           display: none;
           li{
+            >a{
             padding: .1rem;
             background: #fff;
             border-bottom: #dbdbdb solid 1px;
@@ -67,17 +68,11 @@
               justify-content: center;
               align-content: center;
               margin-right: .1rem;
-             
+              
             }
-             &:first-child .ranking{
-                  background: #f10e0e;
-              }
-               &:nth-child(2) .ranking{
-                  background: #ff9211;
-              }
-               &:nth-child(3) .ranking{
-                  background: #85de59;
-              }
+             
+             
+             
             .list-content{
               flex: 1;
               >p{
@@ -99,6 +94,17 @@
               transform: rotate(45deg);
               margin: auto 0;
             }
+            }
+
+             &:first-child .ranking{
+                  background: #f10e0e;
+              }
+               &:nth-child(2) .ranking{
+                  background: #ff9211;
+              }
+               &:nth-child(3) .ranking{
+                  background: #85de59;
+              }
           }
         }
       }

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/cjh-brand-list.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="content-header">
+    <div class="hd-back"></div>
+    <div class="hd-title">
+      热销排行
+    </div>
+    <div class="hd-download"></div>
+  </div>
+  
+  <!-- 面包屑导航 -->
+  <div class="cjh-breadcrumb-nav">
+    <div>
+      <span>首页</span>
+      <span> > </span>
+      <a href="javascript:;">全部分类</a>
+      <span> > </span>
+      <span>xxx</span>
+    </div>
+  </div>
+
+  <!-- 销量排行 -->
+  <div class="cjh-sales">
+   
+    
+  </div>
+
+
+
+  <footer>
+    <!-- 底部工具栏 -->
+    <div class="footer-tools">
+      <a href="javascript:;">登录</a>
+      <a href="javascript:;">注册</a>
+      <a href="javascript:;">返回顶部</a>
+    </div>
+    <!-- 版权信息 -->
+    <div class="footer-copyright">
+      <p>
+        <a href="javascript:;">手机APP下载</a>
+        慢慢买手机版
+        <span>-- 掌上比价平台</span>
+      </p>
+      <p>m.manmanbuy.com</p>
+    </div>
+  </footer>
+  <script src="../js/media.js"></script>
+  <script src="../js/jquery-3.3.1.min.js"></script>
+  <script src="../lib/template/template.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../lib/twbs-pagination/jquery.twbsPagination.min.js"></script>
+
+  <!-- 模板  销量页面数据的渲染 -->
+  <script type="text/template" id="salesListTemp">
+    {{if result.length!=0}}
+       <div class="sales-title">
+     
+      {{result[0].productName.substring(result[0].productName.length-4)}}
+    
+      销量排行
+       </div>
+      {{each result as val key}}
+    
+    <div class="sales-main clearfix">
+      <div class="sales-img fl">
+        {{val.productImg}}
+      </div>
+      <div class="sales-del fr">
+        <div class="del-title">
+          {{val.productName}}
+        </div>
+        <div class="del-money">
+          <span class="price">{{val.productPrice}}</span>
+          <span class="star">★★★★★</span>
+        </div>
+        <div class="del-order">
+          <span class="bao">{{val.productQuote}}</span>
+          <span class="comment" data-id="{{val.productId}}">{{val.productCom}}</span>
+        </div>
+      </div>
+
+    </div>
+    <div class="com clearfix">
+    
+    
+    </div>
+      {{/each}}
+      {{else}}
+      数据不存在
+      {{/if}}
+  </script>
+
+  <!-- 模板  面包屑的渲染 -->
+  <script type="text/template" id="breadcrumbTemp">
+       
+    <div>
+      
+    <span>首页</span>
+    <span> > </span>
+    <a href="./cjh-brand.html">全部分类</a>
+    <span> > </span>
+    <!-- $val['goods_name']|msubstr=0,8,'utf-8',false -->
+    <span>{{result[0].brandName.substring(result[0].brandName.length-4)}}</span>
+    </div>
+   
+    </script>
+
+<!-- 模板  品论的渲染 -->
+<script type="text/template" id="commentTemp">
+      {{each result as val key}}
+         <div class="box">
+        <div class="top clearfix">
+        <div class="zuo fl">{{val.comName}}</div>
+        <div class="stat1 fl">★★★★★</div>
+        <div class="date fr">{{val.comTime}}</div>
+      </div>
+      <div class="com-mian">
+         {{val.comContent}}
+      </div>
+      
+     </div>
+    
+      {{/each}}
+       <div class="shouqi">收起</div>
+    
+   
+    </script>
+
+  <script>
+
+  // 获取地址栏的拼接参数
+  var url= location.search.trim();
+  var brandtitleid= URLHandle.parameter(url).brandtitleid;
+  var pagesize = URLHandle.parameter(url).pagesize; 
+  // console.log(brandtitleid);
+  var pagesize ,pagecount;
+  var totalCount=21;
+
+// console.log(brandtitleid);
+  // console.log(pagesize);
+  // 发送第一次ajax请求
+  $.ajax({
+    url:"http://193.112.55.79:9090/api/getbrandproductlist",
+    type:"get",
+    data:{
+      brandtitleid: brandtitleid,
+    },
+    dataType:"jsonp",
+    success:function (res) {
+      console.log(res);
+      template.config("escape", false);
+      // 调用模板方法
+      var htmlStr=template("salesListTemp",res);
+      pagesize=res.pagesize;
+      
+
+      $(".cjh-sales").html(htmlStr);
+
+   
+    }
+  });
+  // 发送第二次ajax请求 面包屑
+   $.ajax({
+      url: "http://193.112.55.79:9090/api/getbrand",
+      type: "get",
+      data: {
+        brandtitleid: brandtitleid,
+      },
+      dataType: "jsonp",
+      success: function (res) {
+        // console.log(res);
+        // template.config("escape", false);
+        // 调用模板方法
+        var htmlStr = template("breadcrumbTemp", res);
+        $(".cjh-breadcrumb-nav").html(htmlStr);
+
+      }
+    });
+
+    /* 显示与隐藏 */
+    $(".cjh-sales").on("click",".comment",function () {
+      $(this).parent().parent().parent().next().slideToggle();
+      $(".shouqi").show();
+      var productid=$(this).attr("data-id");
+      console.log(productid);
+      /* 发送ajax请求 请求品论数据 */
+      $.ajax({
+        url:"http://193.112.55.79:9090/api/getproductcom",
+        type:"get",
+        data:{
+          productid: productid
+        },
+        dataType:"jsonp",
+        success:function (res) {
+          console.log(res);
+          
+          var htmlStr=template("commentTemp",res);
+          $(".com").html(htmlStr);
+          
+        }
+      });
+    })
+    $(".cjh-sales").on("click", ".shouqi", function () {
+        $(this).siblings(".box").parent().slideToggle();
+        $(this).hide();
+        console.log('aaa');
+      })
+    
+
+
+
+  </script>
+
+</body>
+</html>
