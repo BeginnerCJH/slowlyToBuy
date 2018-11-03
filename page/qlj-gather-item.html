@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/qlj-gather-item.css">
+    <script src="../js/media.js"></script>
+</head>
+
+<body>
+
+
+    <!-- 头部 -->
+    <div class="content-header">
+        <div class="hd-back"></div>
+        <div class="hd-title">
+            凑单品
+        </div>
+        <div class="hd-download"></div>
+    </div>
+    <script src="../js/media.js"></script>
+
+    <!-- 筛选 -->
+    <div class="navbar">
+
+        <select name="shop" id="shop">
+            <option value="" selected>京东</option>
+        </select>
+
+        <select name="address" id="address">
+            <option value="">华东</option>
+        </select>
+
+        <select name="price" id="price">
+            <option value="">全部价格</option>
+        </select>
+
+        <a href="javascript:;">
+        </a>
+    </div>
+
+
+    <!-- 内容 -->
+    <div class="qlj-items">
+    </div>
+</body>
+
+</html>
+
+
+<!-- 内容模板 -->
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../lib/template/template.js"></script>
+
+<!-- 店铺模板 -->
+<script type="text/template" id="shopTmp">
+    {{each result as val key}}
+    <option data-id="{{val.shopId}}">{{val.shopName}}</option>
+    {{/each}}
+</script>
+
+<!-- 地区模板 -->
+<script type="text/template" id="addressTmp">
+    {{each result as val key}}
+    <option data-id="{{val.areaId}}">{{val.areaName}} </option>
+    {{/each}}
+</script>
+
+<!-- 商品列表 -->
+<script type="text/template" id="productTmp">
+    {{each result as val key}}
+    <a href="javascript:;">
+        <img src="{{val.productImg}}" alt="">
+        <p>{{val.productName}}</p>
+        <div>
+            <span class="red">{{val.productPrice}}</span>
+            <span>去凑单</span>
+        </div>
+    </a>
+    {{/each}}
+</script>
+
+
+
+<script>
+    var shopid;
+    var areaid;
+    render();
+    // 店铺
+    $.ajax({
+        url: 'http://193.112.55.79:9090/api/getgsshop',
+        type: 'get',
+        dataType: 'jsonp',
+        success: function(res) {
+            template.config('escape', false)
+            if (res) {
+                var htmlStr = template('shopTmp', res);
+                // 动态渲染数据
+                $('#shop').html(htmlStr);
+                // 获得当前索引
+                $('#shop').on('change', function() {
+                    shopid = $('#shop option:selected')[0].dataset.id;
+                    render();
+                })
+            }
+        }
+    })
+
+
+    // 地区
+    $.ajax({
+            url: 'http://193.112.55.79:9090/api/getgsshoparea',
+            type: 'get',
+            dataType: 'jsonp',
+            success: function(res) {
+                template.config('escape', false)
+                if (res) {
+
+                    var htmlStr = template('addressTmp', res);
+                    // 动态渲染数据
+                    $('#address').html(htmlStr);
+                    // 获得当前索引
+                    $('#address').on('change', function() {
+                        areaid = $('#address option:selected')[0].dataset.id;
+                        render();
+                    })
+                }
+            }
+        })
+        // 商品列表
+    function render() {
+        $.ajax({
+            url: 'http://193.112.55.79:9090/api/getgsproduct',
+            type: 'get',
+            dataType: 'jsonp',
+            data: {
+                shopid: shopid || 0,
+                areaid: areaid || 0
+            },
+            success: function(res) {
+                // console.log(res);
+                if (res) {
+                    var htmlStr = template('productTmp', res);
+                    // 动态渲染数据
+                    $('.qlj-items').html(htmlStr);
+                }
+            }
+        })
+    }
+</script>
